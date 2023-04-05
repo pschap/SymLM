@@ -1,0 +1,2 @@
+icfg,icfg_bc.json,sample_binary/bc/bc,false
+icfg,icfc_dc.json,sample_binary/bc/dc,false
