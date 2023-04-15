@@ -167,6 +167,9 @@ cython_debug/
 # ICFG
 *.json
 
+# Checkpoints
+checkpoints/
+
 # Do not ignore sample files
 !CHIP-8.exe
 !CHIP-8.pdb
