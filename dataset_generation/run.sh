@@ -6,14 +6,14 @@ GHIDRA_PROJECT_NAME='SymLM'                         # Name of Ghidra Project
 
 # ICFG Output
 ICFG_OUTPUT_DIR='icfg'                              # Path to ICFG Output Directory
-ICFG_OUTPUT_NAME='notepadPlus_icfg.json'          # Name of ICFG Output File
+ICFG_OUTPUT_NAME='CHIP-8.json'          # Name of ICFG Output File
 
 # Input Binary
-INPUT_BINARY='windows_binaries/notepad++.exe'
+INPUT_BINARY='binaries/CHIP-8.exe'
 
 # (Optional) For Windows/Portable Executable Binaries
 IS_PORTABLE_EXECUTABLE=true                 # Portable Executable Binaries
-SYMBOL_PATH='pdb/notepadPlus.pdb'                 # Debugging Information (PDB File)
+SYMBOL_PATH='pdb/CHIP-8.pdb'                 # Debugging Information (PDB File)
 
 # Generate the ICFG
 python3.8 get_calling_context.py \
