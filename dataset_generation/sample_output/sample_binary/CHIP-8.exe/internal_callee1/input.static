@@ -1,0 +1,232 @@
+push rbp mov ebp , esp push num call qword ptr [ rip + hexvar ] mov eax , dword ptr [ rbp + num ] push rax call qword ptr [ rip + hexvar ] push - hexvar call qword ptr [ rip + hexvar ] push rax call qword ptr [ rip + hexvar ] pop rbp ret
+,
+,
+,
+,
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+,
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+,
+,
+,
+,
+jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] int3 int3 int3 int3 int3 int3 int3 int3 int3 int3 int3 push rbp mov ebp , esp mov al , num pop rbp ret
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+,
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+,
+jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] int3 int3 int3 int3 int3 int3 int3 int3 int3 int3 int3 push rbp mov ebp , esp mov al , num pop rbp ret
+,
+,
+,
+,
+,
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+,
+,
+,
+,
+jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] int3 int3 int3 int3 int3 int3 int3 int3 int3 int3 int3 push rbp mov ebp , esp mov al , num pop rbp ret
+,
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+,
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+,
+,
+,
+,
+,
+push rbp mov ebp , esp mov al , num pop rbp ret
+,
+,
+,
+,
+,
+push rbp mov ebp , esp push num call qword ptr [ rip + hexvar ] mov eax , dword ptr [ rbp + num ] push rax call qword ptr [ rip + hexvar ] push - hexvar call qword ptr [ rip + hexvar ] push rax call qword ptr [ rip + hexvar ] pop rbp ret
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+,
+,
+push rbp mov ebp , esp sub esp , hexvar push hexvar call qword ptr [ rip + hexvar ] test eax , eax je hexvar mov ecx , dword ptr [ rbp + num ] int hexvar movabs dword ptr [ hexvar ] , eax add byte ptr [ r9 + hexvar ] , cl add byte ptr [ rcx + hexvar ] , cl add byte ptr [ rcx + hexvar ] , cl add byte ptr [ rcx + hexvar ] , cl add byte ptr [ rsi - hexvar ] , ah adc eax , hexvar mov word ptr [ rip + hexvar ] , cs mov word ptr [ rip + hexvar ] , ds mov word ptr [ rip + hexvar ] , es mov word ptr [ rip + hexvar ] , fs mov word ptr [ rip + hexvar ] , gs pushfq pop qword ptr [ rip + hexvar ] mov eax , dword ptr [ rbp ] movabs dword ptr [ hexvar ] , eax adc byte ptr [ rip + hexvar ] , al or byte ptr [ rbx + hexvar ] , ah mov eax , dword ptr [ rbp - hexvar ] movabs eax , dword ptr [ hexvar ] add bh , al add eax , hexvar or dword ptr [ rax + rax ] , eax rol bh , num or al , num add byte ptr [ r9 ] , al add byte ptr [ rax ] , al add byte ptr [ rbx + hexvar ] , al or eax , hexvar jne hexvar mov dword ptr [ rbp + hexvar ] , num cmp dword ptr [ rbp + hexvar ] , hexvar jbe hexvar mov ecx , dword ptr [ rbp + hexvar ] sub ecx , num mov dword ptr [ rbp + hexvar ] , ecx mov edx , dword ptr [ rbp + hexvar ] add edx , num mov dword ptr [ rip + hexvar ] , edx mov eax , num imul ecx , eax , num mov edx , dword ptr [ rbp + num ] mov dword ptr [ rcx + hexvar ] , edx mov dword ptr [ rbp - num ] , num jmp hexvar mov eax , dword ptr [ rbp - num ] add eax , num mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] cmp ecx , dword ptr [ rbp + hexvar ] jae hexvar mov edx , dword ptr [ rbp - num ] mov eax , dword ptr [ rbp - num ] mov ecx , dword ptr [ rbp + hexvar ] mov eax , dword ptr [ rcx + rax * num ] mov dword ptr [ rdx * num + hexvar ] , eax jmp hexvar push hexvar call hexvar mov esp , ebp pop rbp ret
+,
+,
+push rbp mov ebp , esp push rcx mov eax , dword ptr [ rbp + num ] mov ecx , dword ptr [ rax ] mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov esp , ebp pop rbp ret
+,
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+,
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+,
+,
+,
+push rbp mov ebp , esp mov dword ptr [ rip + hexvar ] , num pop rbp ret
+,
+,
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+,
+,
+,
+,
+,
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+,
+,
+,
+push rbp mov ebp , esp mov eax , dword ptr [ rbp + num ] mov ecx , dword ptr [ rax ] push rcx call hexvar add esp , num mov edx , dword ptr [ rbp + num ] mov dword ptr [ rdx ] , eax mov eax , dword ptr [ rbp + hexvar ] push rax mov ecx , dword ptr [ rbp + hexvar ] push rcx mov edx , dword ptr [ rbp + hexvar ] push rdx mov eax , dword ptr [ rbp + num ] push rax push hexvar push hexvar call hexvar add esp , hexvar pop rbp ret
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+,
+,
+,
+,
+,
+,
+,
+,
+push rcx lea ecx , [ rsp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop rcx xchg eax , esp mov eax , dword ptr [ rax ] mov dword ptr [ rsp ] , eax ret
+,
+,
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+push rbp mov ebp , esp mov eax , dword ptr [ rbp + num ] push rax call hexvar add esp , num pop rbp ret
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+,
+,
+,
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+push rbp mov ebp , esp sub esp , hexvar movabs eax , dword ptr [ hexvar ] cld push rbx mov ebx , dword ptr [ rbp + num ] push rsi mov esi , dword ptr [ rbp + hexvar ] push rdi mov edi , dword ptr [ rip + hexvar ] cmp edi , - num je hexvar cmp byte ptr [ rsi ] , num je hexvar push rsi call hexvar add eax , hexvar add esp , num cmp eax , hexvar ja hexvar push hexvar lea eax , [ rbp - hexvar ] push hexvar push rax call hexvar push rsi lea eax , [ rbp - hexvar ] push hexvar push rax call hexvar push hexvar lea eax , [ rbp - hexvar ] push hexvar push rax call hexvar add esp , hexvar lea eax , [ rbp - hexvar ] jmp hexvar mov eax , hexvar push rax push num push rdi push rbx call hexvar add esp , hexvar mov ecx , dword ptr [ rbp - num ] pop rdi pop rsi xor ecx , ebp pop rbx call hexvar mov esp , ebp pop rbp ret
+,
+,
+,
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+,
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+,
+,
+mov eax , hexvar ret
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+,
+,
+,
+,
+,
+push rbp mov ebp , esp mov eax , num pop rbp ret
+,
+,
+,
+,
+jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] int3 int3 int3 int3 int3 int3 int3 int3 int3 int3 int3 push rbp mov ebp , esp mov al , num pop rbp ret
+push rbp mov ebp , esp sub esp , hexvar movabs eax , dword ptr [ hexvar ] cld mov eax , dword ptr [ rbp + num ] push rbx mov ebx , dword ptr [ rbp + hexvar ] push rdi mov edi , dword ptr [ rip + hexvar ] mov dword ptr [ rbp - hexvar ] , eax cmp edi , - num je hexvar test ebx , ebx jne hexvar push hexvar push num push rdi push rax call hexvar add esp , hexvar pop rdi pop rbx mov ecx , dword ptr [ rbp - num ] xor ecx , ebp call hexvar mov esp , ebp pop rbp ret
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+,
+,
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+,
+,
+,
+,
+,
+,
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] jmp qword ptr [ rip + hexvar ] int3 int3 int3 int3 int3 int3 int3 int3 int3 int3 int3 push rbp mov ebp , esp mov al , num pop rbp ret
+,
+,
+,
+,
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+,
+,
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+,
+push rbp mov ebp , esp sub esp , hexvar cmp dword ptr [ rip + hexvar ] , num jge hexvar mov eax , dword ptr [ rbp + num ] jmp hexvar cmp dword ptr [ rbp + num ] , hexvar je hexvar cmp dword ptr [ rbp + num ] , hexvar je hexvar mov eax , dword ptr [ rbp + num ] jmp hexvar mov dword ptr [ rbp - hexvar ] , num mov dword ptr [ rbp - hexvar ] , num mov dword ptr [ rbp - hexvar ] , num mov dword ptr [ rbp - hexvar ] , num mov dword ptr [ rbp - hexvar ] , hexvar mov dword ptr [ rbp - hexvar ] , hexvar mov dword ptr [ rbp - hexvar ] , hexvar mov dword ptr [ rbp - hexvar ] , hexvar mov dword ptr [ rbp - hexvar ] , hexvar mov dword ptr [ rbp - hexvar ] , hexvar mov dword ptr [ rbp - hexvar ] , hexvar mov dword ptr [ rbp - hexvar ] , hexvar mov dword ptr [ rbp - hexvar ] , hexvar mov dword ptr [ rbp - hexvar ] , hexvar mov dword ptr [ rbp - hexvar ] , hexvar mov dword ptr [ rbp - hexvar ] , hexvar mov dword ptr [ rbp - hexvar ] , hexvar mov dword ptr [ rbp - hexvar ] , hexvar mov dword ptr [ rbp - hexvar ] , hexvar stmxcsr dword ptr [ rbp - num ] mov eax , dword ptr [ rbp - num ] xor eax , hexvar mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] and ecx , hexvar jne hexvar mov eax , hexvar jmp hexvar mov edx , dword ptr [ rbp - num ] and edx , hexvar jne hexvar mov eax , hexvar jmp hexvar mov eax , dword ptr [ rbp - num ] and eax , hexvar jne hexvar mov eax , hexvar jmp hexvar mov ecx , dword ptr [ rbp - num ] and ecx , hexvar jne hexvar mov eax , hexvar jmp hexvar mov edx , dword ptr [ rbp - num ] and edx , hexvar jne hexvar mov eax , hexvar jmp hexvar mov eax , dword ptr [ rbp - num ] and eax , hexvar jne hexvar mov eax , hexvar jmp hexvar mov eax , dword ptr [ rbp + num ] mov esp , ebp pop rbp ret
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+,
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+,
+,
+,
+,
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+,
+,
+,
+,
+push rbp mov ebp , esp mov al , num pop rbp ret
+,
+,
+,
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+,
+,
+,
+,
+,
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+,
+cmp ecx , dword ptr [ rip + hexvar ] jne hexvar ret
+,
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+,
+,
+,
+,
+,
+,
+,
+,
+,
+push rbp mov ebp , esp sub esp , hexvar movzx eax , byte ptr [ rip + hexvar ] test eax , eax je hexvar mov al , num jmp hexvar cmp dword ptr [ rbp + num ] , num je hexvar cmp dword ptr [ rbp + num ] , num je hexvar push num call hexvar call hexvar test eax , eax je hexvar cmp dword ptr [ rbp + num ] , num jne hexvar push hexvar call hexvar add esp , num test eax , eax je hexvar xor al , al jmp hexvar push hexvar call hexvar add esp , num test eax , eax je hexvar xor al , al jmp hexvar jmp hexvar mov dword ptr [ rbp - num ] , hexvar mov ecx , dword ptr [ rbp - num ] mov dword ptr [ rbp - hexvar ] , ecx mov edx , dword ptr [ rbp - num ] mov dword ptr [ rbp - hexvar ] , edx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - hexvar ] mov dword ptr [ rip + hexvar ] , ecx mov edx , dword ptr [ rbp - hexvar ] mov dword ptr [ rip + hexvar ] , edx mov eax , dword ptr [ rbp - num ] movabs dword ptr [ hexvar ] , eax in al , hexvar push rbp cld mov dword ptr [ rbp - hexvar ] , edx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - hexvar ] , eax mov ecx , dword ptr [ rbp - hexvar ] mov dword ptr [ rip + hexvar ] , ecx mov edx , dword ptr [ rbp - hexvar ] mov dword ptr [ rip + hexvar ] , edx mov eax , dword ptr [ rbp - hexvar ] movabs dword ptr [ hexvar ] , eax add byte ptr [ r9 ] , al mov al , num mov esp , ebp pop rbp ret
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+,
+,
+,
+push rbp mov ebp , esp mov eax , hexvar pop rbp ret
+,
+,
+,
+,
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+,
+,
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+push rbp mov ebp , esp push rcx cmp dword ptr [ rip + hexvar ] , num je hexvar mov dword ptr [ rbp - num ] , num jmp hexvar mov dword ptr [ rbp - num ] , num mov eax , dword ptr [ rbp - num ] mov esp , ebp pop rbp ret
+,
+,
+,
+push rbp mov ebp , esp movabs eax , dword ptr [ hexvar ] or eax , hexvar mov dword ptr [ rip + hexvar ] , num pop rbp ret
+,
+,
+,
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+,
+,
+,
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+,
+push rbp mov ebp , esp push rcx cmp dword ptr [ rip + hexvar ] , num je hexvar mov dword ptr [ rbp - num ] , num jmp hexvar mov dword ptr [ rbp - num ] , num mov eax , dword ptr [ rbp - num ] mov esp , ebp pop rbp ret
+,
+,
+,
+,
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+,
+,
+,
+,
+,
+push rbp mov ebp , esp xor eax , eax pop rbp ret
+,
+push rbp mov ebp , esp sub esp , num mov dword ptr [ rbp - num ] , ecx mov eax , dword ptr [ rbp - num ] mov dword ptr [ rbp - num ] , eax mov ecx , dword ptr [ rbp - num ] movzx edx , byte ptr [ rcx ] test edx , edx je hexvar cmp dword ptr [ rip + hexvar ] , num je hexvar call qword ptr [ rip + hexvar ] cmp dword ptr [ rip + hexvar ] , eax jne hexvar nop mov esp , ebp pop rbp ret
+,
+,
+push rbp mov ebp , esp xor eax , eax pop rbp ret
+,
+,
+,
+,
+,

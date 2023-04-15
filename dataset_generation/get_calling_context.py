@@ -25,7 +25,7 @@ def parse_args():
     :return: the provided parsed args bundle
     """
 
-    parser = argparse.ArgumentParser(prog = 'get_calling_context.py', description='parse the interprocedural control flow graph of a binary')
+    parser = argparse.ArgumentParser(prog='get_calling_context.py', description='parse the interprocedural control flow graph of a binary')
 
     # ICFG Output Directory
     parser.add_argument('--icfg_dir', type=str, default='icfg', help='output location of the ICFG')

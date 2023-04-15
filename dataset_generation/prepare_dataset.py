@@ -27,8 +27,8 @@ def parse_args():
     # Architecture
     parser.add_argument('--arch', type=str, help='architecture of binary; x86, x64, mips, and arm are currently supported')
 
-    # Top Popular Callers
-    parser.add_argument('--top_k', type=int, default=2, help='number of top popular callers (callees) to be selected')
+    # Top Popular Callers/Callees
+    parser.add_argument('--top_k', type=int, default=2, help='number of top popular callers/callees to be selected')
 
     args = parser.parse_args()
     return args

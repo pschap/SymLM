@@ -1,2 +1,3 @@
-icfg,icfg_bc.json,sample_binary/bc/bc,false
-icfg,icfc_dc.json,sample_binary/bc/dc,false
+icfg,ICFG_bc.json,sample_binary/bc/bc,sample_output,x64,false
+icfg,ICFG_dc.json,sample_binary/bc/dc,sample_output,x64,false
+icfg,ICFG_CHIP-8.json,sample_binary/CHIP-8.exe,sample_output,x64,true,sample_pdb/CHIP-8.pdb
