@@ -1,11 +1,11 @@
-c 3350
+c 3351
 set 3243
 s 3051
 get 2807
 arg 2797
 quote 2762
 x 2359
-r 2136
+r 2137
 n 1981
 f 1958
 e 1957
@@ -24,7 +24,7 @@ i 1217
 m 1181
 l 1129
 mem 1116
-is 1056
+is 1057
 v 1044
 name 1020
 str 988
@@ -78,7 +78,7 @@ cb 456
 option 456
 sha 453
 cmp 452
-al 439
+al 440
 symbol 433
 mul 419
 un 413
@@ -89,7 +89,7 @@ size 386
 sk 382
 check 373
 ing 366
-num 362
+num 363
 error 360
 pr 356
 time 355
@@ -168,9 +168,9 @@ record 192
 block 190
 base 189
 finish 189
+safe 189
 xc 189
 bit 188
-safe 188
 ri 186
 for 185
 push 185
@@ -193,9 +193,9 @@ len 171
 report 170
 unaligned 170
 class 169
+dup 166
 node 166
 die 165
-dup 165
 ec 164
 space 164
 tr 164

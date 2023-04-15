@@ -167,5 +167,9 @@ cython_debug/
 # ICFG
 *.json
 
-# Dataset
-dataset_generation/data_bin/*
+# Do not ignore sample files
+!CHIP-8.exe
+!CHIP-8.pdb
+!ICFG_bc.json
+!ICFG_dc.json
+!ICFG_CHIP-8.json

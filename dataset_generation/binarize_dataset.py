@@ -22,7 +22,7 @@ def parse_args():
     parser.add_argument('--data_bin_dir', type=str, help='directory where the binarized result is to be stored')
 
     # Top Popular Callers/Callees
-    parser.add_argument('--top_k', type=int, help='number of top popular callers/callees to be selected')
+    parser.add_argument('--top_k', type=int, default=2, help='number of top popular callers/callees to be selected')
 
     args = parser.parse_args()
     return args
