@@ -42,7 +42,7 @@ cd dataset_generation
 bash run.sh
 ```
 
-Alternatively, a dataset can be generated for a batch of binaries using the script ['run_batch.sh](run_batch.sh). To use this script, first
+Alternatively, a dataset can be generated for a batch of binaries using the script [`run_batch.sh`](run_batch.sh). To use this script, first
 create a comma-delimited text file, where each line is of the following format.
 
 ```plaintext
@@ -62,7 +62,7 @@ The [`utils`](utils) folder contains several Python scripts containing utilities
 
 ### Binary Example
 
-We provide sample `x64` binaries under [`sample_binary`](sample_binary). [`sample_binary/bc`](sample_binary/bc) contains two ELF binaries, while [`sample_binary/CHIP-8.exe`](sample_binary/CHIP-8.exe) is a sample portable executable binary. By running the `run_batch.sh` script with the sample batch file `batch.txt`, the generated datasets are under [`sample_output/](sample_output/) and the directory structure for each binary is:
+We provide sample `x64` binaries under [`sample_binary`](sample_binary). [`sample_binary/bc`](sample_binary/bc) contains two ELF binaries, while [`sample_binary/CHIP-8.exe`](sample_binary/CHIP-8.exe) is a sample portable executable binary. By running the `run_batch.sh` script with the sample batch file `batch.txt`, the generated datasets are under [`sample_output/`](sample_output/) and the directory structure for each binary is:
 
 ```plaintext
 sample_output/bc/
@@ -122,7 +122,7 @@ If you have multiple binaries, you will have to copy the lines of the same files
 
 ### Parameters
 
-For dataset preparation, we filter out internal functions with too large or too small function bodies based on the number of tokens in their function body. For more details, please refer to [this line](https://github.com/OSUSecLab/SymLM/blob/b09c4fecfcd5a4baf6cef28e417c66a6cbe31314/dataset_generation/prepare_dataset.py#L400).
+For dataset preparation, we filter out internal functions with too large or too small function bodies based on the number of tokens in their function body. For more details, please refer to [this line](https://github.com/pschap/SymLM/blob/cef82e690960871169c4028762e84b3b1e7f02b8/dataset_generation/utils/linux_utils.py#L194).
 
 Moreover, you can set the number of callers and callees considered by `--top_k` of `prepare_dataset.py`. Based on our experience of the SymLM authors, this parameter is bounded by the memory of GPUs. 
 
@@ -145,14 +145,14 @@ To elaborate, we use the sample dataset under [`dataset_sample`](dataset_sample)
 For internal functions, generate their vocabulary by:
 
 ```bash
-python get_vocb_for_binarization.py --src_file dataset_sample/train/self/input.label --output_dir vocabulary/label/
+python get_vocab_for_binarization.py --src_file dataset_sample/train/self/input.label --output_dir vocabulary/label/
 ```
 
 For external functions, first merge function names under all external callee directories, and then use the same step to get its vocabulary:
 
 ```bash
 cat dataset_sample/train/external_callee1/input.label dataset_sample/train/external_callee2/input.label >> vocabulary/external_label/src_file.label
-python get_vocb_for_binarization.py --src_file vocabulary/external_label/src_file.label --output_dir vocabulary/external_label/
+python get_vocab_for_binarization.py --src_file vocabulary/external_label/src_file.label --output_dir vocabulary/external_label/
 ```
 
 We provide the vocabularies of both internal and external functions under [`vocabulary/label`](vocabulary/label) and [`vocabulary/external_label`](vocabulary/external_label) directory.
