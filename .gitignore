@@ -160,6 +160,8 @@ cython_debug/
 #.idea/
 
 # Binaries
+dataset_generation/binaries/
+dataset_generation/pdb/
 *.exe
 *.dll
 *.pdb
@@ -170,9 +172,16 @@ cython_debug/
 # Checkpoints
 checkpoints/
 
+# Batch Files
+*.txt
+
 # Do not ignore sample files
 !CHIP-8.exe
 !CHIP-8.pdb
 !ICFG_bc.json
 !ICFG_dc.json
 !ICFG_CHIP-8.json
+
+# Do not ignore requirements and sample batch file
+!requirements.txt
+!dataset_generation/batch.txt

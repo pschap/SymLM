@@ -3,7 +3,7 @@
 CHECKPOINT_PATH=checkpoints/train
 mkdir -p $CHECKPOINT_PATH
 rm -f $CHECKPOINT_PATH/checkpoint_best.pt
-cp checkpoints/pretrain/checkpoint_best.pt $CHECKPOINT_PATH/
+cp checkpoints/pretrained/checkpoint_best.pt $CHECKPOINT_PATH/
 
 TOTAL_UPDATES=20000                     # Total number of training steps
 WARMUP_UPDATES=100                      # Warmup the learning rate over this many updates
@@ -25,7 +25,7 @@ CUDA_VISIBLE_DEVICES=0 python train.py \
   $DATASET_PATH \
   --ddp-backend=no_c10d \
   --num-classes $NUM_CLASSES --num-external $NUM_EXTERNAL \
-  --external-emb $EXTERNAL_EMB --num-calls $NUM_CALLs \
+  --external-emb $EXTERNAL_EMB --num-calls $NUM_CALLS \
   --task func_name_pred --criterion func_name_pred --arch func_name_pred \
   --reset-optimizer --reset-dataloader --reset-meters \
   --optimizer adam --adam-betas '(0.9,0.98)' --adam-eps 1e-6 --clip-norm 0.0 \
