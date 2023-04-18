@@ -1,0 +1,1213 @@
+push esi mov esi , dword ptr [ esp + num ] lea eax , [ esp + hexvar ] push eax push dword ptr [ esp + hexvar ] push dword ptr [ esp + hexvar ] push hexvar call hexvar add esp , hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar mov eax , dword ptr [ esi + hexvar ] mov dword ptr [ esi + hexvar ] , num test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] test eax , eax je hexvar push num push dword ptr [ esi + hexvar ] call eax add esp , num mov eax , dword ptr [ esp + hexvar ] mov dword ptr [ esi + hexvar ] , num cmp eax , - num je hexvar push eax push num push esi call hexvar add esp , hexvar pop esi ret
+,
+,
+,
+,
+mov ecx , dword ptr [ esp + num ] xor eax , eax cmp dword ptr [ ecx + hexvar ] , num sete al ret
+,
+,
+,
+,
+,
+mov eax , hexvar call hexvar mov eax , dword ptr [ hexvar ] xor eax , esp mov dword ptr [ esp + hexvar ] , eax mov eax , dword ptr [ esp + hexvar ] lea ecx , [ esp ] push esi mov esi , dword ptr [ esp + hexvar ] push ecx push hexvar push num push hexvar push eax mov dword ptr [ esp + hexvar ] , num call hexvar add esp , hexvar test eax , eax jne hexvar pop esi mov ecx , dword ptr [ esp + hexvar ] xor ecx , esp call hexvar add esp , hexvar ret
+,
+push esi mov esi , dword ptr [ esp + num ] mov eax , dword ptr [ esi + hexvar ] test eax , eax jne hexvar call hexvar push hexvar push hexvar push hexvar call hexvar push num push hexvar push hexvar push esi call hexvar add esp , hexvar xor eax , eax pop esi ret
+,
+,
+mov eax , num call hexvar push ebx push ebp push esi mov esi , dword ptr [ esp + hexvar ] push edi push hexvar push hexvar mov ebx , dword ptr [ esi + hexvar ] mov eax , dword ptr [ esi + hexvar ] push dword ptr [ esi + hexvar ] mov dword ptr [ esp + hexvar ] , eax mov ebp , dword ptr [ ebx + hexvar ] and ebp , hexvar call hexvar add esp , hexvar mov dword ptr [ esi + hexvar ] , num cmp dword ptr [ esi + hexvar ] , num mov dword ptr [ esi + hexvar ] , num jne hexvar mov edi , dword ptr [ ebx + hexvar ] test edi , edi je hexvar test ebp , ebp jne hexvar mov ebx , dword ptr [ ebx + hexvar ] jmp hexvar mov edi , dword ptr [ ebx + hexvar ] test edi , edi je hexvar test ebp , ebp jne hexvar mov ebx , dword ptr [ ebx + hexvar ] jmp hexvar lea eax , [ esp + hexvar ] push eax push num push esi call hexvar mov edi , dword ptr [ esp + hexvar ] add esp , hexvar mov ebx , eax mov ecx , dword ptr [ esi + hexvar ] and ecx , hexvar or ecx , num jne hexvar test ebp , ebp jne hexvar mov eax , dword ptr [ esi + hexvar ] mov ecx , dword ptr [ esi + hexvar ] mov dword ptr [ esp + hexvar ] , eax jmp hexvar mov eax , edi mov dword ptr [ esp + hexvar ] , edi mov edi , dword ptr [ esi + hexvar ] mov ecx , ebx mov ebx , dword ptr [ esi + hexvar ] push ebx push edi push ecx push eax push num push esi mov dword ptr [ esp + hexvar ] , ecx call hexvar add esp , hexvar test eax , eax je hexvar push hexvar shl eax , num push hexvar push eax call hexvar mov ebp , eax add esp , hexvar test ebp , ebp jne hexvar pop edi pop esi pop ebp pop ebx add esp , num ret
+,
+,
+,
+,
+,
+push esi mov esi , dword ptr [ esp + hexvar ] push edi cmp esi , num ja hexvar mov edi , dword ptr [ esp + hexvar ] lea eax , [ esp + hexvar ] push eax push esi push edi call hexvar add esp , hexvar test eax , eax je hexvar add dword ptr [ edi + hexvar ] , esi add dword ptr [ edi + num ] , esi mov edx , dword ptr [ esp + hexvar ] mov ecx , dword ptr [ esp + hexvar ] mov eax , dword ptr [ esp + hexvar ] test edx , edx je hexvar dec edx add edx , esi test esi , esi je hexvar nop mov byte ptr [ edx ] , cl lea edx , [ edx - num ] shrd ecx , eax , num shr eax , num sub esi , num jne hexvar test eax , eax ja hexvar jb hexvar test ecx , ecx jne hexvar pop edi mov eax , num pop esi ret
+,
+,
+jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] mov al , num ret
+,
+,
+push esi mov esi , dword ptr [ esp + num ] lea eax , [ esp + hexvar ] push eax push dword ptr [ esp + hexvar ] push dword ptr [ esp + hexvar ] push hexvar call hexvar add esp , hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar mov eax , dword ptr [ esi + hexvar ] mov dword ptr [ esi + hexvar ] , num test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] test eax , eax je hexvar push num push dword ptr [ esi + hexvar ] call eax add esp , num mov eax , dword ptr [ esp + hexvar ] mov dword ptr [ esi + hexvar ] , num cmp eax , - num je hexvar push eax push num push esi call hexvar add esp , hexvar pop esi ret
+xor eax , eax inc eax ret
+,
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+mov eax , dword ptr [ esp + num ] xor ecx , ecx cmp ecx , dword ptr [ eax + hexvar ] sbb eax , eax neg eax ret
+,
+push esi push edi mov edi , dword ptr [ esp + hexvar ] test edi , edi je hexvar xor esi , esi cmp dword ptr [ edi ] , esi cmove esi , edi test esi , esi je hexvar cmp dword ptr [ esi + hexvar ] , num jne hexvar push esi mov dword ptr [ esi + hexvar ] , num mov dword ptr [ esi + hexvar ] , num call hexvar mov eax , dword ptr [ edi + hexvar ] push esi mov eax , dword ptr [ eax + hexvar ] mov dword ptr [ esi + hexvar ] , eax call hexvar add esp , num push edi call hexvar add esp , num pop edi pop esi ret
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+mov edx , dword ptr [ esp + num ] push ebx push esi mov esi , dword ptr [ esp + hexvar ] mov ebx , dword ptr [ edx + hexvar ] push edi test dword ptr [ esi + hexvar ] , ebx jne hexvar mov eax , dword ptr [ esi + hexvar ] test dword ptr [ edx + hexvar ] , eax jne hexvar mov ecx , dword ptr [ esi + hexvar ] test ecx , ecx je hexvar mov eax , dword ptr [ esi + hexvar ] mov eax , dword ptr [ eax + hexvar ] test byte ptr [ eax + hexvar ] , num jne hexvar mov eax , dword ptr [ edx + hexvar ] cmp eax , hexvar jne hexvar cmp dword ptr [ esp + hexvar ] , num je hexvar test bl , hexvar mov edi , hexvar cmovne eax , edi cmp eax , ecx jg hexvar mov eax , dword ptr [ edx + hexvar ] cmp eax , dword ptr [ esi + hexvar ] jge hexvar pop edi pop esi mov eax , num pop ebx ret
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+cmp ecx , dword ptr [ hexvar ] jne hexvar ret
+,
+,
+,
+,
+,
+mov eax , num call hexvar push edi push hexvar push hexvar push hexvar call hexvar mov edi , eax add esp , hexvar test edi , edi jne hexvar pop edi add esp , num ret
+,
+jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] mov al , num ret
+,
+push esi mov esi , dword ptr [ esp + num ] lea eax , [ esp + hexvar ] push eax push dword ptr [ esp + hexvar ] push dword ptr [ esp + hexvar ] push hexvar call hexvar add esp , hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar mov eax , dword ptr [ esi + hexvar ] mov dword ptr [ esi + hexvar ] , num test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] test eax , eax je hexvar push num push dword ptr [ esi + hexvar ] call eax add esp , num mov eax , dword ptr [ esp + hexvar ] mov dword ptr [ esi + hexvar ] , num cmp eax , - num je hexvar push eax push num push esi call hexvar add esp , hexvar pop esi ret
+,
+,
+push esi mov esi , dword ptr [ esp + hexvar ] push edi cmp esi , num ja hexvar mov edi , dword ptr [ esp + hexvar ] lea eax , [ esp + hexvar ] push eax push esi push edi call hexvar add esp , hexvar test eax , eax je hexvar add dword ptr [ edi + hexvar ] , esi add dword ptr [ edi + num ] , esi mov edx , dword ptr [ esp + hexvar ] mov ecx , dword ptr [ esp + hexvar ] mov eax , dword ptr [ esp + hexvar ] test edx , edx je hexvar dec edx add edx , esi test esi , esi je hexvar nop mov byte ptr [ edx ] , cl lea edx , [ edx - num ] shrd ecx , eax , num shr eax , num sub esi , num jne hexvar test eax , eax ja hexvar jb hexvar test ecx , ecx jne hexvar pop edi mov eax , num pop esi ret
+,
+,
+,
+,
+,
+push ebx push esi mov esi , dword ptr [ esp + hexvar ] mov eax , dword ptr [ esi + hexvar ] mov ecx , dword ptr [ eax + hexvar ] test byte ptr [ ecx + hexvar ] , num jne hexvar mov eax , dword ptr [ eax ] cmp eax , hexvar jl hexvar cmp eax , hexvar jne hexvar mov eax , dword ptr [ esi + hexvar ] cmp eax , num je hexvar cmp eax , num je hexvar cmp eax , num je hexvar cmp eax , num je hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar push dword ptr [ esp + hexvar ] mov eax , dword ptr [ ecx + hexvar ] call eax jmp hexvar push dword ptr [ esp + hexvar ] call hexvar add esp , num mov ebx , eax cmp dword ptr [ esi + hexvar ] , hexvar jne hexvar cmp ebx , hexvar jne hexvar lea ebx , [ eax - hexvar ] jmp hexvar test ebx , ebx js hexvar test byte ptr [ esi + hexvar ] , num je hexvar test ebx , ebx jne hexvar mov eax , dword ptr [ esp + hexvar ] cmp eax , num jne hexvar mov ecx , dword ptr [ esi + hexvar ] test ecx , ecx je hexvar push ecx push dword ptr [ esi + hexvar ] call hexvar mov eax , dword ptr [ esp + hexvar ] add esp , num mov byte ptr [ esi + hexvar ] , al lea eax , [ esi + hexvar ] push eax mov dword ptr [ esi + hexvar ] , num mov byte ptr [ esi + hexvar ] , bl call hexvar add esp , num test eax , eax jne hexvar mov eax , dword ptr [ esi + hexvar ] push esi mov eax , dword ptr [ eax + hexvar ] call eax add esp , num pop esi pop ebx ret
+,
+,
+mov ecx , dword ptr [ esp + num ] mov eax , dword ptr [ ecx + hexvar ] test eax , eax je hexvar cmp dword ptr [ eax ] , num je hexvar push num push eax push ecx call hexvar add esp , hexvar ret
+,
+,
+,
+,
+,
+push esi mov esi , dword ptr [ esp + num ] push edi push dword ptr [ esp + hexvar ] mov edi , dword ptr [ esp + hexvar ] push edi push esi call hexvar add esp , hexvar test eax , eax jne hexvar pop edi pop esi ret
+,
+,
+,
+,
+mov ecx , dword ptr [ esp + num ] mov eax , dword ptr [ ecx + hexvar ] test eax , eax je hexvar cmp dword ptr [ eax ] , num je hexvar push num push eax push ecx call hexvar add esp , hexvar ret
+jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] mov al , num ret
+,
+push esi mov esi , dword ptr [ esp + num ] push edi mov eax , dword ptr [ esi + hexvar ] test eax , eax jne hexvar mov edi , dword ptr [ esp + hexvar ] cmp edi , hexvar jbe hexvar call hexvar push hexvar push hexvar push hexvar call hexvar push num push hexvar push hexvar push esi call hexvar add esp , hexvar xor eax , eax pop edi pop esi ret
+,
+,
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+,
+,
+,
+push esi mov esi , dword ptr [ esp + num ] test esi , esi je hexvar push esi call hexvar add esp , num test eax , eax je hexvar push esi call hexvar add esp , num pop esi ret
+,
+,
+,
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+mov ecx , dword ptr [ esp + num ] mov eax , dword ptr [ ecx + hexvar ] test eax , eax je hexvar cmp dword ptr [ eax ] , num je hexvar push num push eax push ecx call hexvar add esp , hexvar ret
+mov eax , dword ptr [ esp + num ] mov eax , dword ptr [ eax ] ret
+,
+,
+,
+,
+,
+push ebx push ebp push esi mov esi , dword ptr [ esp + hexvar ] xor ebp , ebp push edi mov eax , dword ptr [ esi + hexvar ] cmp eax , dword ptr [ esi + hexvar ] jae hexvar nop dword ptr [ eax ] mov eax , dword ptr [ esi + hexvar ] push num lea ecx , [ eax * num ] sub ecx , eax lea edi , [ esi + ecx * num ] call dword ptr [ hexvar ] cmp dword ptr [ esi + hexvar ] , num je hexvar mov eax , dword ptr [ esi + hexvar ] mov eax , dword ptr [ eax + hexvar ] test eax , eax je hexvar push dword ptr [ edi + hexvar ] push esi call eax add esp , num cmp eax , num jne hexvar push dword ptr [ edi + hexvar ] mov eax , dword ptr [ edi + hexvar ] add eax , dword ptr [ edi + hexvar ] push eax push dword ptr [ esi + hexvar ] call hexvar add esp , hexvar mov dword ptr [ esp + hexvar ] , eax test eax , eax js hexvar mov ebp , eax jne hexvar push num push dword ptr [ esi + hexvar ] call hexvar add esp , num test eax , eax je hexvar xor ebx , ebx jmp hexvar mov ebx , num cmp ebp , dword ptr [ edi + hexvar ] jne hexvar add dword ptr [ edi + hexvar ] , ebp mov dword ptr [ edi + hexvar ] , num mov eax , dword ptr [ esi + hexvar ] mov ebx , dword ptr [ esi + hexvar ] inc eax mov dword ptr [ esi + hexvar ] , eax cmp eax , ebx jb hexvar jne hexvar test byte ptr [ esi + hexvar ] , hexvar je hexvar test ebx , ebx je hexvar lea edi , [ ebx * num ] sub edi , ebx add edi , num lea edi , [ esi + edi * num ] cmp dword ptr [ edi + hexvar ] , num je hexvar mov dword ptr [ edi + hexvar ] , num jmp hexvar push num push dword ptr [ esi + hexvar ] call hexvar add esp , num neg eax sbb ebx , ebx and ebx , num add ebx , - num cmp dword ptr [ esp + hexvar ] , num jle hexvar add dword ptr [ edi + hexvar ] , ebp sub dword ptr [ edi + hexvar ] , ebp jmp hexvar push hexvar push hexvar push dword ptr [ edi ] call hexvar add esp , hexvar mov dword ptr [ edi ] , num sub edi , hexvar sub ebx , num jne hexvar mov dword ptr [ esi + hexvar ] , num mov eax , num pop edi pop esi pop ebp pop ebx ret
+,
+mov ecx , dword ptr [ esp + num ] mov eax , dword ptr [ ecx + hexvar ] test eax , eax je hexvar cmp dword ptr [ eax ] , num je hexvar push num push eax push ecx call hexvar add esp , hexvar ret
+,
+,
+mov eax , hexvar call hexvar push ebx push esi mov esi , dword ptr [ esp + hexvar ] mov ebx , num push edi xor edi , edi test esi , esi je hexvar cmp dword ptr [ esi ] , edi cmove edi , esi cmp dword ptr [ edi + hexvar ] , num jne hexvar call hexvar push hexvar push hexvar push hexvar call hexvar push num push hexvar push hexvar call hexvar add esp , hexvar or eax , hexvar pop edi pop esi pop ebx add esp , hexvar ret
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+cmp ecx , dword ptr [ hexvar ] jne hexvar ret
+,
+,
+,
+,
+,
+push esi mov esi , dword ptr [ esp + hexvar ] push edi test esi , esi je hexvar mov edi , dword ptr [ esp + hexvar ] lea eax , [ esp + hexvar ] push eax push esi push edi call hexvar add esp , hexvar test eax , eax je hexvar add dword ptr [ edi + hexvar ] , esi add dword ptr [ edi + num ] , esi mov eax , dword ptr [ esp + hexvar ] test eax , eax je hexvar push esi push dword ptr [ esp + hexvar ] push eax call hexvar add esp , hexvar pop edi mov eax , num pop esi ret
+,
+,
+,
+,
+,
+cmp dword ptr [ hexvar ] , num push esi je hexvar cmp dword ptr [ hexvar ] , num jne hexvar mov dword ptr [ hexvar ] , num call hexvar push hexvar push hexvar push hexvar call hexvar push num push hexvar push hexvar call hexvar add esp , hexvar xor eax , eax pop esi ret
+,
+,
+,
+,
+,
+,
+,
+push esi mov esi , dword ptr [ esp + num ] lea eax , [ esp + hexvar ] push eax push dword ptr [ esp + hexvar ] push dword ptr [ esp + hexvar ] push hexvar call hexvar add esp , hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar mov eax , dword ptr [ esi + hexvar ] mov dword ptr [ esi + hexvar ] , num test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] test eax , eax je hexvar push num push dword ptr [ esi + hexvar ] call eax add esp , num mov eax , dword ptr [ esp + hexvar ] mov dword ptr [ esi + hexvar ] , num cmp eax , - num je hexvar push eax push num push esi call hexvar add esp , hexvar pop esi ret
+,
+cmp ecx , dword ptr [ hexvar ] jne hexvar ret
+,
+push ebx mov ebx , dword ptr [ esp + hexvar ] push ebp push esi push edi mov ecx , dword ptr [ ebx ] mov edi , dword ptr [ esp + hexvar ] test ecx , ecx je hexvar test edi , edi jne hexvar mov edi , dword ptr [ ebx + hexvar ] mov ebp , dword ptr [ esp + hexvar ] push hexvar push hexvar push edi mov eax , dword ptr [ ebp + hexvar ] push ecx push dword ptr [ ebp + hexvar ] mov eax , dword ptr [ eax + hexvar ] call eax add esp , hexvar push eax push num push ebp call hexvar add esp , hexvar test eax , eax jg hexvar pop edi pop esi pop ebp xor eax , eax pop ebx ret
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+mov edx , dword ptr [ esp + hexvar ] push esi push edi cmp edx , num jae hexvar test edx , edx je hexvar lea ecx , [ edx * num ] mov esi , num shl esi , cl dec esi add esi , edx jmp hexvar or esi , hexvar mov edi , dword ptr [ esp + hexvar ] test edi , edi je hexvar mov ecx , dword ptr [ esp + hexvar ] test ecx , ecx je hexvar mov eax , dword ptr [ esp + hexvar ] cmp esi , ecx push edx cmovb ecx , esi push eax and dword ptr [ eax + hexvar ] , hexvar mov dword ptr [ eax + num ] , edi mov dword ptr [ eax ] , num mov dword ptr [ eax + hexvar ] , ecx call hexvar add esp , num pop edi pop esi ret
+,
+mov eax , num call hexvar push ebx push esi mov esi , dword ptr [ esp + hexvar ] mov eax , dword ptr [ esi + hexvar ] mov ebx , dword ptr [ eax + hexvar ] mov eax , dword ptr [ eax + hexvar ] mov dword ptr [ esp + hexvar ] , eax test al , hexvar je hexvar push esi call hexvar push dword ptr [ esi + num ] lea ecx , [ esp + hexvar ] push ecx push eax call hexvar add esp , hexvar test eax , eax je hexvar mov ecx , dword ptr [ eax + num ] test dword ptr [ esp + hexvar ] , ecx je hexvar test bl , hexvar je hexvar cmp dword ptr [ esp + num ] , num je hexvar call hexvar push hexvar push hexvar push hexvar call hexvar push num push hexvar push hexvar push esi call hexvar add esp , hexvar xor eax , eax pop esi pop ebx pop ecx ret
+,
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+,
+,
+mov eax , num call hexvar mov ecx , dword ptr [ esp + num ] push esi mov eax , dword ptr [ ecx + hexvar ] mov eax , dword ptr [ eax ] cmp eax , hexvar je hexvar cmp eax , hexvar je hexvar mov eax , dword ptr [ esp + hexvar ] mov ecx , dword ptr [ ecx + hexvar ] pop esi mov dword ptr [ eax ] , ecx mov eax , dword ptr [ esp + hexvar ] mov dword ptr [ eax ] , ecx mov eax , dword ptr [ esp + hexvar ] neg eax sbb eax , eax and eax , hexvar pop ecx ret
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+push esi mov esi , dword ptr [ esp + hexvar ] push edi cmp esi , num ja hexvar mov edi , dword ptr [ esp + hexvar ] lea eax , [ esp + hexvar ] push eax push esi push edi call hexvar add esp , hexvar test eax , eax je hexvar add dword ptr [ edi + hexvar ] , esi add dword ptr [ edi + num ] , esi mov edx , dword ptr [ esp + hexvar ] mov ecx , dword ptr [ esp + hexvar ] mov eax , dword ptr [ esp + hexvar ] test edx , edx je hexvar dec edx add edx , esi test esi , esi je hexvar nop mov byte ptr [ edx ] , cl lea edx , [ edx - num ] shrd ecx , eax , num shr eax , num sub esi , num jne hexvar test eax , eax ja hexvar jb hexvar test ecx , ecx jne hexvar pop edi mov eax , num pop esi ret
+,
+,
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+,
+,
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+,
+push esi mov esi , dword ptr [ esp + num ] lea eax , [ esp + hexvar ] push eax push dword ptr [ esp + hexvar ] push dword ptr [ esp + hexvar ] push hexvar call hexvar add esp , hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar mov eax , dword ptr [ esi + hexvar ] mov dword ptr [ esi + hexvar ] , num test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] test eax , eax je hexvar push num push dword ptr [ esi + hexvar ] call eax add esp , num mov eax , dword ptr [ esp + hexvar ] mov dword ptr [ esi + hexvar ] , num cmp eax , - num je hexvar push eax push num push esi call hexvar add esp , hexvar pop esi ret
+,
+,
+push esi mov esi , dword ptr [ esp + num ] push edi cmp dword ptr [ esi + hexvar ] , num jne hexvar lea eax , [ esp + hexvar ] push eax push num push num push dword ptr [ esi + hexvar ] call hexvar mov edi , eax add esp , hexvar test edi , edi jg hexvar call hexvar push hexvar push hexvar push hexvar call hexvar push num push hexvar push hexvar push esi call hexvar add esp , hexvar xor eax , eax pop edi pop esi ret
+,
+push esi mov esi , dword ptr [ esp + num ] lea eax , [ esp + hexvar ] push eax push dword ptr [ esp + hexvar ] push dword ptr [ esp + hexvar ] push hexvar call hexvar add esp , hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar mov eax , dword ptr [ esi + hexvar ] mov dword ptr [ esi + hexvar ] , num test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] test eax , eax je hexvar push num push dword ptr [ esi + hexvar ] call eax add esp , num mov eax , dword ptr [ esp + hexvar ] mov dword ptr [ esi + hexvar ] , num cmp eax , - num je hexvar push eax push num push esi call hexvar add esp , hexvar pop esi ret
+mov ecx , dword ptr [ esp + num ] mov eax , dword ptr [ ecx + hexvar ] test eax , eax je hexvar cmp dword ptr [ eax ] , num je hexvar push num push eax push ecx call hexvar add esp , hexvar ret
+mov al , num ret
+,
+,
+push esi mov esi , dword ptr [ esp + num ] push edi push dword ptr [ esp + hexvar ] mov edi , dword ptr [ esp + hexvar ] push edi push esi call hexvar add esp , hexvar test eax , eax jne hexvar pop edi pop esi ret
+,
+,
+,
+mov al , num ret
+,
+,
+,
+,
+,
+,
+,
+push esi push edi mov edi , dword ptr [ esp + hexvar ] push hexvar push edi call hexvar mov esi , dword ptr [ esp + hexvar ] add esp , num test eax , eax je hexvar lea ecx , [ esi + hexvar ] push ecx push eax call hexvar add esp , num test eax , eax jne hexvar call hexvar push hexvar push hexvar push hexvar call hexvar push num push hexvar push hexvar call hexvar add esp , hexvar xor eax , eax pop edi pop esi ret
+,
+,
+,
+,
+,
+,
+,
+,
+mov eax , dword ptr [ esp + num ] xor edx , edx push ebx push esi push edi mov edi , dword ptr [ eax + num ] mov ecx , dword ptr [ eax ] test edi , edi je hexvar mov ebx , dword ptr [ esp + hexvar ] mov esi , dword ptr [ esp + hexvar ] nop word ptr [ eax + eax ] movzx eax , word ptr [ ecx ] cmp ebx , eax jne hexvar cmp esi , num je hexvar mov eax , dword ptr [ ecx + num ] cmp esi , eax je hexvar cmp eax , num je hexvar inc edx add ecx , hexvar cmp edx , edi jb hexvar pop edi pop esi xor eax , eax pop ebx ret
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+push esi mov esi , dword ptr [ esp + num ] lea eax , [ esp + hexvar ] push eax push dword ptr [ esp + hexvar ] push dword ptr [ esp + hexvar ] push hexvar call hexvar add esp , hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar mov eax , dword ptr [ esi + hexvar ] mov dword ptr [ esi + hexvar ] , num test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] test eax , eax je hexvar push num push dword ptr [ esi + hexvar ] call eax add esp , num mov eax , dword ptr [ esp + hexvar ] mov dword ptr [ esi + hexvar ] , num cmp eax , - num je hexvar push eax push num push esi call hexvar add esp , hexvar pop esi ret
+,
+,
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+,
+,
+,
+,
+,
+,
+,
+push ebx push esi mov esi , dword ptr [ esp + hexvar ] xor eax , eax mov ecx , dword ptr [ esi + num ] mov edx , dword ptr [ ecx + hexvar ] test edx , edx je hexvar mov ecx , dword ptr [ ecx + hexvar ] mov ebx , dword ptr [ esp + hexvar ] nop cmp word ptr [ ecx + hexvar ] , bx je hexvar inc eax add ecx , hexvar cmp eax , edx jb hexvar pop esi xor eax , eax pop ebx ret
+,
+,
+,
+,
+,
+,
+push ebx mov ebx , dword ptr [ esp + hexvar ] push ebp push esi push edi test ebx , ebx je hexvar mov edi , dword ptr [ esp + hexvar ] test edi , edi je hexvar xor esi , esi test edi , edi je hexvar mov ebp , dword ptr [ esp + hexvar ] nop movzx eax , word ptr [ ebx + esi * num ] cmp word ptr [ esp + hexvar ] , ax jne hexvar test ebp , ebp je hexvar push hexvar push eax push dword ptr [ esp + hexvar ] call hexvar add esp , hexvar test eax , eax jne hexvar inc esi cmp esi , edi jb hexvar pop edi pop esi pop ebp xor eax , eax pop ebx ret
+push esi mov esi , dword ptr [ esp + num ] test esi , esi je hexvar or ecx , hexvar lea eax , [ esi + hexvar ] lock xadd dword ptr [ eax ] , ecx dec ecx test ecx , ecx jg hexvar lea eax , [ esi + hexvar ] push eax push esi push num call hexvar mov eax , dword ptr [ esi + hexvar ] add esp , hexvar test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] push esi call eax add esp , num push dword ptr [ esi + num ] call hexvar push dword ptr [ esi + hexvar ] call hexvar push hexvar push hexvar push esi call hexvar add esp , hexvar pop esi ret
+,
+,
+,
+,
+push edi call hexvar push eax call hexvar mov edi , eax add esp , num test edi , edi jne hexvar call hexvar push hexvar push hexvar push hexvar call hexvar push edi push hexvar push hexvar push dword ptr [ esp + hexvar ] call hexvar add esp , hexvar xor eax , eax pop edi ret
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+mov ecx , dword ptr [ esp + num ] mov eax , dword ptr [ ecx + hexvar ] test eax , eax je hexvar cmp dword ptr [ eax ] , num je hexvar push num push eax push ecx call hexvar add esp , hexvar ret
+,
+,
+,
+,
+push esi mov esi , dword ptr [ esp + num ] mov eax , hexvar push edi mov edi , hexvar cmp dword ptr [ esi + hexvar ] , num cmove edi , eax cmp dword ptr [ esi + hexvar ] , num jne hexvar mov ecx , dword ptr [ esi + hexvar ] test ecx , ecx je hexvar cmp dword ptr [ ecx + num ] , num je hexvar mov eax , dword ptr [ esi + hexvar ] mov dword ptr [ ecx + hexvar ] , eax mov eax , dword ptr [ esi + hexvar ] push esi mov eax , dword ptr [ eax + hexvar ] mov eax , dword ptr [ eax ] call eax add esp , num test eax , eax jne hexvar pop edi pop esi ret
+,
+,
+mov eax , dword ptr [ esp + num ] xor ecx , ecx cmp ecx , dword ptr [ eax + hexvar ] sbb eax , eax neg eax ret
+,
+push esi mov esi , dword ptr [ esp + num ] test esi , esi je hexvar or ecx , hexvar lea eax , [ esi + hexvar ] lock xadd dword ptr [ eax ] , ecx dec ecx test ecx , ecx jg hexvar lea eax , [ esi + hexvar ] push eax push esi push num call hexvar lea eax , [ esi + hexvar ] push hexvar push eax call hexvar lea eax , [ esi + hexvar ] push hexvar push eax call hexvar push dword ptr [ esi + hexvar ] call hexvar push dword ptr [ esi + hexvar ] call hexvar push dword ptr [ esi + hexvar ] call hexvar push hexvar push hexvar push dword ptr [ esi + hexvar ] call hexvar push hexvar push hexvar push dword ptr [ esi + hexvar ] call hexvar add esp , hexvar push hexvar push hexvar push dword ptr [ esi + hexvar ] call hexvar push hexvar push hexvar push dword ptr [ esi + hexvar ] call hexvar push hexvar push hexvar push dword ptr [ esi + hexvar ] call hexvar push hexvar push hexvar push dword ptr [ esi + hexvar ] call hexvar push hexvar push hexvar push dword ptr [ esi + hexvar ] call hexvar push dword ptr [ esi + hexvar ] call hexvar add esp , hexvar push hexvar push hexvar push hexvar push esi call hexvar add esp , hexvar pop esi ret
+,
+,
+,
+mov ecx , dword ptr [ esp + num ] mov eax , dword ptr [ ecx + hexvar ] test eax , eax je hexvar cmp dword ptr [ eax ] , num je hexvar push num push eax push ecx call hexvar add esp , hexvar ret
+,
+,
+push esi mov esi , dword ptr [ esp + num ] test esi , esi je hexvar or ecx , hexvar lea eax , [ esi + hexvar ] lock xadd dword ptr [ eax ] , ecx dec ecx test ecx , ecx jg hexvar lea eax , [ esi + hexvar ] push eax push esi push num call hexvar lea eax , [ esi + hexvar ] push hexvar push eax call hexvar lea eax , [ esi + hexvar ] push hexvar push eax call hexvar push dword ptr [ esi + hexvar ] call hexvar push dword ptr [ esi + hexvar ] call hexvar push dword ptr [ esi + hexvar ] call hexvar push hexvar push hexvar push dword ptr [ esi + hexvar ] call hexvar push hexvar push hexvar push dword ptr [ esi + hexvar ] call hexvar add esp , hexvar push hexvar push hexvar push dword ptr [ esi + hexvar ] call hexvar push hexvar push hexvar push dword ptr [ esi + hexvar ] call hexvar push hexvar push hexvar push dword ptr [ esi + hexvar ] call hexvar push hexvar push hexvar push dword ptr [ esi + hexvar ] call hexvar push hexvar push hexvar push dword ptr [ esi + hexvar ] call hexvar push dword ptr [ esi + hexvar ] call hexvar add esp , hexvar push hexvar push hexvar push hexvar push esi call hexvar add esp , hexvar pop esi ret
+,
+,
+,
+mov ecx , dword ptr [ esp + num ] test ecx , ecx je hexvar xor eax , eax cmp dword ptr [ ecx ] , eax cmove eax , ecx test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] ret
+,
+push esi mov esi , dword ptr [ esp + num ] push edi cmp dword ptr [ esi + hexvar ] , num jne hexvar lea eax , [ esp + hexvar ] push eax push num push num push dword ptr [ esi + hexvar ] call hexvar mov edi , eax add esp , hexvar test edi , edi jg hexvar call hexvar push hexvar push hexvar push hexvar call hexvar push num push hexvar push hexvar push esi call hexvar add esp , hexvar xor eax , eax pop edi pop esi ret
+,
+,
+,
+,
+,
+,
+mov eax , hexvar call hexvar push ebx push esi mov esi , dword ptr [ esp + hexvar ] push edi test esi , esi je hexvar xor edi , edi cmp dword ptr [ esi ] , edi cmove edi , esi test edi , edi je hexvar mov edx , dword ptr [ esp + hexvar ] lea eax , [ edx - hexvar ] cmp eax , hexvar ja hexvar movzx ecx , byte ptr [ eax + hexvar ] jmp dword ptr [ ecx * num + hexvar ] mov eax , dword ptr [ edi + hexvar ] pop edi pop esi pop ebx add esp , hexvar ret
+mov eax , num call hexvar mov eax , dword ptr [ esp + hexvar ] mov dword ptr [ esp ] , num push esi mov esi , dword ptr [ esp + hexvar ] mov dword ptr [ esp + hexvar ] , num cmp eax , num jne hexvar mov eax , dword ptr [ esi + hexvar ] mov ecx , dword ptr [ eax + hexvar ] test ecx , ecx je hexvar push dword ptr [ eax + hexvar ] push esi call ecx add esp , num test eax , eax jns hexvar mov dword ptr [ esi + hexvar ] , num mov eax , num pop esi pop ecx ret
+,
+,
+push edi call hexvar push eax call hexvar mov edi , eax add esp , num test edi , edi jne hexvar pop edi ret
+,
+,
+,
+,
+mov ecx , dword ptr [ esp + num ] mov eax , dword ptr [ ecx + hexvar ] and eax , hexvar or eax , num je hexvar xor eax , eax ret
+push esi mov esi , dword ptr [ esp + num ] lea eax , [ esp + hexvar ] push eax push dword ptr [ esp + hexvar ] push dword ptr [ esp + hexvar ] push hexvar call hexvar add esp , hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar mov eax , dword ptr [ esi + hexvar ] mov dword ptr [ esi + hexvar ] , num test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] test eax , eax je hexvar push num push dword ptr [ esi + hexvar ] call eax add esp , num mov eax , dword ptr [ esp + hexvar ] mov dword ptr [ esi + hexvar ] , num cmp eax , - num je hexvar push eax push num push esi call hexvar add esp , hexvar pop esi ret
+,
+,
+,
+mov ecx , dword ptr [ esp + num ] mov eax , dword ptr [ ecx + hexvar ] test eax , eax je hexvar cmp dword ptr [ eax ] , num je hexvar push num push eax push ecx call hexvar add esp , hexvar ret
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+mov edx , dword ptr [ esp + num ] mov ecx , dword ptr [ edx + hexvar ] mov eax , dword ptr [ ecx + hexvar ] and eax , hexvar cmp eax , hexvar je hexvar cmp eax , hexvar je hexvar cmp eax , hexvar je hexvar mov eax , dword ptr [ edx + hexvar ] push esi cmp eax , dword ptr [ esp + hexvar ] jne hexvar mov esi , dword ptr [ ecx + hexvar ] test esi , esi je hexvar mov eax , dword ptr [ esp + hexvar ] mov dword ptr [ eax ] , esi mov eax , dword ptr [ edx + hexvar ] pop esi mov eax , dword ptr [ eax + hexvar ] ret
+,
+,
+,
+,
+,
+push esi mov esi , dword ptr [ esp + hexvar ] push edi test esi , esi je hexvar mov edi , dword ptr [ esp + hexvar ] lea eax , [ esp + hexvar ] push eax push esi push edi call hexvar add esp , hexvar test eax , eax je hexvar add dword ptr [ edi + hexvar ] , esi add dword ptr [ edi + num ] , esi mov eax , dword ptr [ esp + hexvar ] test eax , eax je hexvar push esi push dword ptr [ esp + hexvar ] push eax call hexvar add esp , hexvar pop edi mov eax , num pop esi ret
+,
+,
+,
+,
+,
+,
+,
+,
+push esi mov esi , dword ptr [ esp + hexvar ] push edi test esi , esi je hexvar mov edi , dword ptr [ esp + hexvar ] lea eax , [ esp + hexvar ] push eax push esi push edi call hexvar add esp , hexvar test eax , eax je hexvar add dword ptr [ edi + hexvar ] , esi add dword ptr [ edi + num ] , esi mov eax , dword ptr [ esp + hexvar ] test eax , eax je hexvar push esi push dword ptr [ esp + hexvar ] push eax call hexvar add esp , hexvar pop edi mov eax , num pop esi ret
+,
+push esi mov esi , dword ptr [ esp + num ] lea eax , [ esi + hexvar ] push eax push dword ptr [ esp + hexvar ] lea eax , [ esi + hexvar ] push dword ptr [ esp + hexvar ] push eax push esi call hexvar add esp , num push eax push esi call hexvar add esp , hexvar pop esi ret
+,
+,
+mov eax , dword ptr [ esp + num ] xor ecx , ecx push esi mov edx , dword ptr [ eax + hexvar ] test edx , edx je hexvar mov eax , dword ptr [ eax + hexvar ] mov si , word ptr [ esp + hexvar ] nop dword ptr [ eax ] cmp word ptr [ eax + hexvar ] , si je hexvar inc ecx add eax , hexvar cmp ecx , edx jb hexvar xor eax , eax pop esi ret
+,
+,
+mov eax , hexvar call hexvar push ebx mov ebx , dword ptr [ esp + hexvar ] push ebp mov ebp , dword ptr [ esp + hexvar ] push esi mov ebx , dword ptr [ ebx + hexvar ] mov esi , dword ptr [ esp + hexvar ] mov dword ptr [ esp + hexvar ] , ebp push edi test ebx , ebx je hexvar mov edi , dword ptr [ esp + hexvar ] test edi , edi je hexvar push hexvar push hexvar call hexvar mov eax , dword ptr [ esp + hexvar ] add esp , num mov dword ptr [ edi ] , num mov eax , dword ptr [ eax + hexvar ] mov dword ptr [ esp + hexvar ] , eax mov eax , dword ptr [ hexvar ] test eax , eax je hexvar lea ecx , [ esp + hexvar ] push ecx push eax call hexvar add esp , num test eax , eax js hexvar push eax push dword ptr [ hexvar ] call hexvar add esp , num mov dword ptr [ edi ] , eax mov edi , dword ptr [ esp + hexvar ] test edi , edi jne hexvar cmp dword ptr [ esp + hexvar ] , edi je hexvar pop edi pop esi pop ebp xor eax , eax pop ebx add esp , hexvar ret
+,
+,
+,
+push esi mov esi , dword ptr [ esp + hexvar ] push edi cmp esi , num ja hexvar mov edi , dword ptr [ esp + hexvar ] lea eax , [ esp + hexvar ] push eax push esi push edi call hexvar add esp , hexvar test eax , eax je hexvar add dword ptr [ edi + hexvar ] , esi add dword ptr [ edi + num ] , esi mov edx , dword ptr [ esp + hexvar ] mov ecx , dword ptr [ esp + hexvar ] mov eax , dword ptr [ esp + hexvar ] test edx , edx je hexvar dec edx add edx , esi test esi , esi je hexvar nop mov byte ptr [ edx ] , cl lea edx , [ edx - num ] shrd ecx , eax , num shr eax , num sub esi , num jne hexvar test eax , eax ja hexvar jb hexvar test ecx , ecx jne hexvar pop edi mov eax , num pop esi ret
+push esi mov esi , dword ptr [ esp + num ] lea eax , [ esp + hexvar ] push eax push dword ptr [ esp + hexvar ] push dword ptr [ esp + hexvar ] push hexvar call hexvar add esp , hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar mov eax , dword ptr [ esi + hexvar ] mov dword ptr [ esi + hexvar ] , num test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] test eax , eax je hexvar push num push dword ptr [ esi + hexvar ] call eax add esp , num mov eax , dword ptr [ esp + hexvar ] mov dword ptr [ esi + hexvar ] , num cmp eax , - num je hexvar push eax push num push esi call hexvar add esp , hexvar pop esi ret
+push esi mov esi , dword ptr [ esp + num ] lea eax , [ esp + hexvar ] push eax push dword ptr [ esp + hexvar ] push dword ptr [ esp + hexvar ] push hexvar call hexvar add esp , hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar mov eax , dword ptr [ esi + hexvar ] mov dword ptr [ esi + hexvar ] , num test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] test eax , eax je hexvar push num push dword ptr [ esi + hexvar ] call eax add esp , num mov eax , dword ptr [ esp + hexvar ] mov dword ptr [ esi + hexvar ] , num cmp eax , - num je hexvar push eax push num push esi call hexvar add esp , hexvar pop esi ret
+,
+,
+,
+,
+,
+mov eax , dword ptr [ esp + num ] test eax , eax je hexvar xor ecx , ecx cmp dword ptr [ eax ] , ecx cmove ecx , eax test ecx , ecx je hexvar mov eax , dword ptr [ ecx + hexvar ] mov eax , dword ptr [ eax + hexvar ] ret
+,
+push esi mov esi , dword ptr [ esp + hexvar ] push edi cmp esi , num ja hexvar mov edi , dword ptr [ esp + hexvar ] lea eax , [ esp + hexvar ] push eax push esi push edi call hexvar add esp , hexvar test eax , eax je hexvar add dword ptr [ edi + hexvar ] , esi add dword ptr [ edi + num ] , esi mov edx , dword ptr [ esp + hexvar ] mov ecx , dword ptr [ esp + hexvar ] mov eax , dword ptr [ esp + hexvar ] test edx , edx je hexvar dec edx add edx , esi test esi , esi je hexvar nop mov byte ptr [ edx ] , cl lea edx , [ edx - num ] shrd ecx , eax , num shr eax , num sub esi , num jne hexvar test eax , eax ja hexvar jb hexvar test ecx , ecx jne hexvar pop edi mov eax , num pop esi ret
+,
+mov edx , dword ptr [ esp + num ] mov ecx , dword ptr [ edx + hexvar ] mov eax , dword ptr [ ecx + hexvar ] and eax , hexvar cmp eax , hexvar je hexvar cmp eax , hexvar je hexvar cmp eax , hexvar je hexvar mov eax , dword ptr [ edx + hexvar ] push esi cmp eax , dword ptr [ esp + hexvar ] jne hexvar mov esi , dword ptr [ ecx + hexvar ] test esi , esi je hexvar mov eax , dword ptr [ esp + hexvar ] mov dword ptr [ eax ] , esi mov eax , dword ptr [ edx + hexvar ] pop esi mov eax , dword ptr [ eax + hexvar ] ret
+,
+,
+,
+,
+,
+,
+,
+,
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+,
+mov eax , dword ptr [ esp + num ] xor edx , edx push ebx push esi push edi mov edi , dword ptr [ eax + num ] mov ecx , dword ptr [ eax ] test edi , edi je hexvar mov ebx , dword ptr [ esp + hexvar ] mov esi , dword ptr [ esp + hexvar ] nop word ptr [ eax + eax ] movzx eax , word ptr [ ecx ] cmp ebx , eax jne hexvar cmp esi , num je hexvar mov eax , dword ptr [ ecx + num ] cmp esi , eax je hexvar cmp eax , num je hexvar inc edx add ecx , hexvar cmp edx , edi jb hexvar pop edi pop esi xor eax , eax pop ebx ret
+,
+,
+,
+,
+,
+,
+,
+,
+push esi mov esi , dword ptr [ esp + num ] lea eax , [ esp + hexvar ] push eax push dword ptr [ esp + hexvar ] push dword ptr [ esp + hexvar ] push hexvar call hexvar add esp , hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar mov eax , dword ptr [ esi + hexvar ] mov dword ptr [ esi + hexvar ] , num test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] test eax , eax je hexvar push num push dword ptr [ esi + hexvar ] call eax add esp , num mov eax , dword ptr [ esp + hexvar ] mov dword ptr [ esi + hexvar ] , num cmp eax , - num je hexvar push eax push num push esi call hexvar add esp , hexvar pop esi ret
+,
+,
+,
+,
+,
+mov eax , dword ptr [ esp + num ] mov ecx , dword ptr [ esp + num ] mov dword ptr [ eax ] , ecx ret
+,
+push esi mov esi , dword ptr [ esp + num ] mov eax , dword ptr [ esi + hexvar ] test eax , eax je hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar push dword ptr [ esi + hexvar ] mov eax , dword ptr [ eax + hexvar ] push dword ptr [ esi + hexvar ] call eax mov eax , dword ptr [ esi + hexvar ] push dword ptr [ esi + hexvar ] push dword ptr [ esi + hexvar ] mov eax , dword ptr [ eax + hexvar ] call eax add esp , hexvar mov eax , num pop esi ret
+,
+push esi mov esi , dword ptr [ esp + num ] mov eax , dword ptr [ esi + hexvar ] test eax , eax je hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar push dword ptr [ esi + hexvar ] mov eax , dword ptr [ eax + hexvar ] push dword ptr [ esi + hexvar ] call eax mov eax , dword ptr [ esi + hexvar ] push dword ptr [ esi + hexvar ] push dword ptr [ esi + hexvar ] mov eax , dword ptr [ eax + hexvar ] call eax add esp , hexvar mov eax , num pop esi ret
+,
+,
+,
+push esi mov esi , dword ptr [ esp + num ] push edi cmp dword ptr [ esi + hexvar ] , num jne hexvar lea eax , [ esp + hexvar ] push eax push num push num push dword ptr [ esi + hexvar ] call hexvar mov edi , eax add esp , hexvar test edi , edi jg hexvar call hexvar push hexvar push hexvar push hexvar call hexvar push num push hexvar push hexvar push esi call hexvar add esp , hexvar xor eax , eax pop edi pop esi ret
+,
+jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+mov eax , hexvar call hexvar push ebx push esi mov esi , dword ptr [ esp + hexvar ] push esi mov ebx , dword ptr [ esi + num ] mov dword ptr [ esp + hexvar ] , ebx call hexvar add esp , num test eax , eax je hexvar push num lea eax , [ esp + hexvar ] xorps xmm0 , xmm0 push eax movups xmmword ptr [ esi + hexvar ] , xmm0 lea eax , [ esp + hexvar ] movq qword ptr [ esi + hexvar ] , xmm0 push eax mov dword ptr [ esi + hexvar ] , num push esi mov byte ptr [ esi + hexvar ] , num call hexvar add esp , hexvar test eax , eax je hexvar call hexvar push hexvar push hexvar push hexvar call hexvar push num push hexvar push hexvar push esi call hexvar add esp , hexvar pop esi xor eax , eax pop ebx add esp , hexvar ret
+,
+,
+,
+mov ecx , dword ptr [ esp + num ] mov eax , dword ptr [ ecx + hexvar ] test eax , eax je hexvar cmp dword ptr [ eax ] , num je hexvar push num push eax push ecx call hexvar add esp , hexvar ret
+push esi push num push num push hexvar call hexvar add esp , hexvar test eax , eax je hexvar push hexvar push hexvar push hexvar call hexvar mov esi , eax add esp , hexvar test esi , esi je hexvar mov dword ptr [ esi + hexvar ] , num mov dword ptr [ esi + hexvar ] , num mov dword ptr [ esi + hexvar ] , hexvar mov dword ptr [ esi + hexvar ] , hexvar call hexvar push esi mov dword ptr [ esi + hexvar ] , eax mov dword ptr [ esi + hexvar ] , edx call hexvar add esp , num call hexvar mov dword ptr [ esi + hexvar ] , eax test eax , eax jne hexvar call hexvar push hexvar push hexvar push hexvar call hexvar push num push hexvar push hexvar call hexvar push hexvar push hexvar push esi call hexvar add esp , hexvar xor eax , eax pop esi ret
+,
+,
+,
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+,
+,
+,
+,
+,
+,
+,
+push ebx push esi mov esi , dword ptr [ esp + hexvar ] xor ebx , ebx push edi test esi , esi je hexvar cmp dword ptr [ esi + hexvar ] , ebx je hexvar mov edi , dword ptr [ esp + hexvar ] push dword ptr [ edi + hexvar ] call hexvar add esp , num test eax , eax jne hexvar pop edi pop esi pop ebx ret
+,
+,
+push esi mov esi , dword ptr [ esp + num ] lea eax , [ esp + hexvar ] push eax push dword ptr [ esp + hexvar ] push dword ptr [ esp + hexvar ] push hexvar call hexvar add esp , hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar mov eax , dword ptr [ esi + hexvar ] mov dword ptr [ esi + hexvar ] , num test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] test eax , eax je hexvar push num push dword ptr [ esi + hexvar ] call eax add esp , num mov eax , dword ptr [ esp + hexvar ] mov dword ptr [ esi + hexvar ] , num cmp eax , - num je hexvar push eax push num push esi call hexvar add esp , hexvar pop esi ret
+,
+,
+,
+jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] mov al , num ret
+,
+,
+,
+push esi mov esi , dword ptr [ esp + hexvar ] push edi cmp esi , num ja hexvar mov edi , dword ptr [ esp + hexvar ] lea eax , [ esp + hexvar ] push eax push esi push edi call hexvar add esp , hexvar test eax , eax je hexvar add dword ptr [ edi + hexvar ] , esi add dword ptr [ edi + num ] , esi mov edx , dword ptr [ esp + hexvar ] mov ecx , dword ptr [ esp + hexvar ] mov eax , dword ptr [ esp + hexvar ] test edx , edx je hexvar dec edx add edx , esi test esi , esi je hexvar nop mov byte ptr [ edx ] , cl lea edx , [ edx - num ] shrd ecx , eax , num shr eax , num sub esi , num jne hexvar test eax , eax ja hexvar jb hexvar test ecx , ecx jne hexvar pop edi mov eax , num pop esi ret
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+mov ecx , dword ptr [ esp + num ] mov eax , dword ptr [ ecx + hexvar ] test eax , eax je hexvar cmp dword ptr [ eax ] , num je hexvar push num push eax push ecx call hexvar add esp , hexvar ret
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+,
+,
+,
+,
+,
+,
+push esi mov esi , dword ptr [ esp + num ] lea eax , [ esp + hexvar ] push eax push dword ptr [ esp + hexvar ] push dword ptr [ esp + hexvar ] push hexvar call hexvar add esp , hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar mov eax , dword ptr [ esi + hexvar ] mov dword ptr [ esi + hexvar ] , num test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] test eax , eax je hexvar push num push dword ptr [ esi + hexvar ] call eax add esp , num mov eax , dword ptr [ esp + hexvar ] mov dword ptr [ esi + hexvar ] , num cmp eax , - num je hexvar push eax push num push esi call hexvar add esp , hexvar pop esi ret
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+mov eax , dword ptr [ esp + num ] test eax , eax je hexvar xor ecx , ecx cmp dword ptr [ eax ] , ecx cmove ecx , eax test ecx , ecx je hexvar mov ecx , dword ptr [ ecx + hexvar ] test ecx , ecx jne hexvar mov eax , dword ptr [ eax + num ] mov ecx , dword ptr [ eax + hexvar ] mov eax , ecx ret
+,
+,
+,
+,
+,
+,
+mov eax , num call hexvar push ebp push edi xor ebp , ebp call hexvar push eax call hexvar mov edi , eax add esp , num test edi , edi jne hexvar call hexvar push hexvar push hexvar push hexvar call hexvar push edi push hexvar push hexvar call hexvar add esp , hexvar push edi call hexvar add esp , num mov eax , ebp pop edi pop ebp pop ecx ret
+,
+,
+,
+,
+,
+,
+jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] mov al , num ret
+,
+,
+,
+mov ecx , dword ptr [ esp + num ] test ecx , ecx je hexvar xor eax , eax cmp dword ptr [ ecx ] , eax cmove eax , ecx test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] ret
+,
+mov eax , hexvar call hexvar push ebx mov ebx , dword ptr [ esp + hexvar ] push ebp push esi mov esi , dword ptr [ esp + hexvar ] push edi xor edi , edi cmp dword ptr [ esi + hexvar ] , edi jne hexvar cmp dword ptr [ esi + hexvar ] , edi je hexvar cmp dword ptr [ esi + hexvar ] , edi je hexvar mov ecx , dword ptr [ esi + hexvar ] mov eax , dword ptr [ ecx + hexvar ] test byte ptr [ eax + hexvar ] , num jne hexvar mov eax , dword ptr [ ecx ] cmp eax , hexvar jl hexvar cmp eax , hexvar je hexvar call hexvar push hexvar push hexvar push hexvar call hexvar push edi push hexvar push hexvar push esi call hexvar add esp , hexvar jmp hexvar mov eax , dword ptr [ esi + hexvar ] mov ecx , dword ptr [ esi + hexvar ] mov dword ptr [ esp + hexvar ] , eax mov eax , ecx and eax , hexvar or eax , num jne hexvar mov eax , ecx and eax , hexvar or eax , num je hexvar cmp dword ptr [ esi + hexvar ] , edi jne hexvar and ecx , hexvar or ecx , edi je hexvar mov dword ptr [ esi + hexvar ] , num mov dword ptr [ esi + hexvar ] , num push hexvar push hexvar push hexvar call hexvar mov edi , eax add esp , hexvar test edi , edi jne hexvar call hexvar push hexvar push hexvar push hexvar call hexvar push edi push hexvar push hexvar push esi call hexvar add esp , hexvar jmp hexvar push hexvar push num push esi call hexvar add esp , hexvar mov eax , num pop edi pop esi pop ebp pop ebx add esp , hexvar ret
+push esi mov esi , dword ptr [ esp + num ] mov eax , dword ptr [ esi + hexvar ] mov dword ptr [ esi + hexvar ] , num mov dword ptr [ esi + hexvar ] , num mov dword ptr [ esi + hexvar ] , num test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] test eax , eax je hexvar push num push dword ptr [ esi + hexvar ] call eax add esp , num mov dword ptr [ esi + hexvar ] , num pop esi ret
+,
+,
+,
+mov eax , hexvar ret
+,
+,
+push ebx push ebp mov ebp , dword ptr [ esp + hexvar ] mov ebx , dword ptr [ ebp + hexvar ] test ebx , ebx je hexvar push edi push dword ptr [ ebx + num ] call hexvar mov edi , eax add esp , num test edi , edi je hexvar push esi mov eax , dword ptr [ ebp ] mov ecx , dword ptr [ edi + num ] mov eax , dword ptr [ eax + hexvar ] and eax , num lea esi , [ ecx + hexvar ] or eax , num je hexvar push dword ptr [ ecx + hexvar ] push dword ptr [ esi ] call hexvar add esp , num push hexvar push hexvar push dword ptr [ esi ] call hexvar push hexvar push hexvar push dword ptr [ edi + num ] call hexvar push edi call hexvar push dword ptr [ ebx + num ] call hexvar mov edi , eax add esp , hexvar test edi , edi jne hexvar pop esi mov eax , dword ptr [ ebx + num ] mov dword ptr [ ebx ] , num mov dword ptr [ ebx + num ] , num mov dword ptr [ ebx + num ] , eax mov eax , dword ptr [ ebp + hexvar ] push dword ptr [ eax + num ] call hexvar push hexvar push hexvar push dword ptr [ ebp + hexvar ] call hexvar add esp , hexvar mov dword ptr [ ebp + hexvar ] , num pop edi pop ebp pop ebx ret
+,
+,
+push esi mov esi , dword ptr [ esp + num ] lea eax , [ esp + hexvar ] push eax push dword ptr [ esp + hexvar ] push dword ptr [ esp + hexvar ] push hexvar call hexvar add esp , hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar mov eax , dword ptr [ esi + hexvar ] mov dword ptr [ esi + hexvar ] , num test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] test eax , eax je hexvar push num push dword ptr [ esi + hexvar ] call eax add esp , num mov eax , dword ptr [ esp + hexvar ] mov dword ptr [ esi + hexvar ] , num cmp eax , - num je hexvar push eax push num push esi call hexvar add esp , hexvar pop esi ret
+,
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+,
+,
+,
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+,
+,
+mov eax , hexvar ret
+,
+push esi mov esi , dword ptr [ esp + num ] cmp dword ptr [ esi + hexvar ] , num je hexvar test byte ptr [ esi + hexvar ] , num jne hexvar push esi call hexvar add esp , num test eax , eax jne hexvar push esi call hexvar add esp , num test eax , eax jne hexvar push dword ptr [ esi + hexvar ] push dword ptr [ esi + hexvar ] call hexvar add esp , num mov eax , num pop esi ret
+,
+,
+,
+,
+,
+push esi mov esi , dword ptr [ esp + hexvar ] push edi cmp esi , num ja hexvar mov edi , dword ptr [ esp + hexvar ] lea eax , [ esp + hexvar ] push eax push esi push edi call hexvar add esp , hexvar test eax , eax je hexvar add dword ptr [ edi + hexvar ] , esi add dword ptr [ edi + num ] , esi mov edx , dword ptr [ esp + hexvar ] mov ecx , dword ptr [ esp + hexvar ] mov eax , dword ptr [ esp + hexvar ] test edx , edx je hexvar dec edx add edx , esi test esi , esi je hexvar nop mov byte ptr [ edx ] , cl lea edx , [ edx - num ] shrd ecx , eax , num shr eax , num sub esi , num jne hexvar test eax , eax ja hexvar jb hexvar test ecx , ecx jne hexvar pop edi mov eax , num pop esi ret
+,
+mov eax , dword ptr [ esp + num ] mov ecx , dword ptr [ eax + hexvar ] push dword ptr [ ecx + hexvar ] push dword ptr [ esp + hexvar ] push dword ptr [ esp + hexvar ] push dword ptr [ esp + hexvar ] push dword ptr [ esp + hexvar ] push eax mov eax , dword ptr [ ecx + hexvar ] push num call eax add esp , hexvar ret
+,
+,
+,
+mov ecx , dword ptr [ esp + num ] mov eax , dword ptr [ ecx + hexvar ] and eax , hexvar or eax , num je hexvar xor eax , eax ret
+mov ecx , dword ptr [ esp + num ] test ecx , ecx je hexvar xor eax , eax cmp dword ptr [ ecx ] , eax cmove eax , ecx test eax , eax je hexvar mov ecx , dword ptr [ esp + hexvar ] cmp ecx , hexvar jbe hexvar call hexvar push hexvar push hexvar push hexvar call hexvar push num push hexvar push hexvar call hexvar add esp , hexvar xor eax , eax ret
+,
+,
+mov ecx , dword ptr [ esp + num ] mov eax , dword ptr [ ecx + hexvar ] cmp eax , dword ptr [ ecx + hexvar ] jb hexvar mov eax , dword ptr [ ecx + hexvar ] push dword ptr [ ecx + hexvar ] mov eax , dword ptr [ eax + hexvar ] call eax add esp , num test eax , eax jne hexvar ret
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+mov ecx , dword ptr [ esp + num ] mov eax , dword ptr [ ecx + hexvar ] test eax , eax je hexvar cmp dword ptr [ eax ] , num je hexvar push num push eax push ecx call hexvar add esp , hexvar ret
+,
+,
+,
+,
+,
+,
+,
+push esi mov esi , dword ptr [ esp + hexvar ] push edi cmp esi , num ja hexvar mov edi , dword ptr [ esp + hexvar ] lea eax , [ esp + hexvar ] push eax push esi push edi call hexvar add esp , hexvar test eax , eax je hexvar add dword ptr [ edi + hexvar ] , esi add dword ptr [ edi + num ] , esi mov edx , dword ptr [ esp + hexvar ] mov ecx , dword ptr [ esp + hexvar ] mov eax , dword ptr [ esp + hexvar ] test edx , edx je hexvar dec edx add edx , esi test esi , esi je hexvar nop mov byte ptr [ edx ] , cl lea edx , [ edx - num ] shrd ecx , eax , num shr eax , num sub esi , num jne hexvar test eax , eax ja hexvar jb hexvar test ecx , ecx jne hexvar pop edi mov eax , num pop esi ret
+,
+,
+,
+,
+,
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+mov ecx , dword ptr [ esp + num ] test ecx , ecx je hexvar xor eax , eax cmp dword ptr [ ecx ] , eax cmove eax , ecx test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] ret
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+mov ecx , dword ptr [ esp + num ] mov eax , dword ptr [ ecx + hexvar ] and eax , hexvar or eax , num je hexvar xor eax , eax ret
+,
+,
+mov ecx , dword ptr [ esp + num ] mov eax , dword ptr [ esp + num ] mov edx , dword ptr [ ecx + hexvar ] test edx , edx je hexvar mov dword ptr [ eax ] , edx mov eax , dword ptr [ esp + hexvar ] mov ecx , dword ptr [ ecx + hexvar ] mov dword ptr [ eax ] , ecx ret
+mov eax , hexvar call hexvar mov eax , dword ptr [ esp + hexvar ] push ebx push ebp mov ebp , dword ptr [ esp + hexvar ] mov ecx , dword ptr [ eax ] mov ebx , dword ptr [ eax + num ] mov eax , dword ptr [ esp + hexvar ] push esi mov esi , dword ptr [ ebp + hexvar ] push edi mov edi , dword ptr [ esp + hexvar ] add esi , hexvar mov dword ptr [ eax ] , num mov eax , edi and eax , hexvar mov dword ptr [ esp + hexvar ] , ecx mov dword ptr [ esp + hexvar ] , esi mov dword ptr [ esp + hexvar ] , eax je hexvar mov eax , dword ptr [ ebp + hexvar ] add eax , hexvar push eax call hexvar add esp , num test esi , esi je hexvar mov eax , dword ptr [ esi + num ] jmp hexvar xor eax , eax add eax , hexvar mov dword ptr [ esp + hexvar ] , eax push hexvar push hexvar lea eax , [ eax + eax * num ] shl eax , num push eax call hexvar add esp , hexvar mov dword ptr [ esp + hexvar ] , eax test eax , eax jne hexvar call hexvar push hexvar push hexvar push hexvar call hexvar push num push hexvar push hexvar push ebp call hexvar add esp , hexvar xor eax , eax pop edi pop esi pop ebp pop ebx add esp , hexvar ret
+,
+,
+,
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+mov edx , dword ptr [ esp + num ] mov ecx , dword ptr [ edx + hexvar ] mov eax , dword ptr [ ecx + hexvar ] and eax , hexvar cmp eax , hexvar je hexvar cmp eax , hexvar je hexvar cmp eax , hexvar je hexvar mov eax , dword ptr [ edx + hexvar ] push esi cmp eax , dword ptr [ esp + hexvar ] jne hexvar mov esi , dword ptr [ ecx + hexvar ] test esi , esi je hexvar mov eax , dword ptr [ esp + hexvar ] mov dword ptr [ eax ] , esi mov eax , dword ptr [ edx + hexvar ] pop esi mov eax , dword ptr [ eax + hexvar ] ret
+,
+,
+,
+,
+,
+,
+mov ecx , dword ptr [ esp + num ] mov eax , dword ptr [ ecx + hexvar ] test eax , eax je hexvar cmp dword ptr [ eax ] , num je hexvar push num push eax push ecx call hexvar add esp , hexvar ret
+mov edx , dword ptr [ esp + hexvar ] push esi push edi cmp edx , num jae hexvar test edx , edx je hexvar lea ecx , [ edx * num ] mov esi , num shl esi , cl dec esi add esi , edx jmp hexvar or esi , hexvar mov edi , dword ptr [ esp + hexvar ] test edi , edi je hexvar mov ecx , dword ptr [ esp + hexvar ] test ecx , ecx je hexvar mov eax , dword ptr [ esp + hexvar ] cmp esi , ecx push edx cmovb ecx , esi push eax and dword ptr [ eax + hexvar ] , hexvar mov dword ptr [ eax + num ] , edi mov dword ptr [ eax ] , num mov dword ptr [ eax + hexvar ] , ecx call hexvar add esp , num pop edi pop esi ret
+push esi mov esi , dword ptr [ esp + num ] test esi , esi je hexvar or ecx , hexvar lea eax , [ esi + hexvar ] lock xadd dword ptr [ eax ] , ecx dec ecx test ecx , ecx jg hexvar lea eax , [ esi + hexvar ] push eax push esi push num call hexvar lea eax , [ esi + hexvar ] push hexvar push eax call hexvar lea eax , [ esi + hexvar ] push hexvar push eax call hexvar push dword ptr [ esi + hexvar ] call hexvar push dword ptr [ esi + hexvar ] call hexvar push dword ptr [ esi + hexvar ] call hexvar push hexvar push hexvar push dword ptr [ esi + hexvar ] call hexvar push hexvar push hexvar push dword ptr [ esi + hexvar ] call hexvar add esp , hexvar push hexvar push hexvar push dword ptr [ esi + hexvar ] call hexvar push hexvar push hexvar push dword ptr [ esi + hexvar ] call hexvar push hexvar push hexvar push dword ptr [ esi + hexvar ] call hexvar push hexvar push hexvar push dword ptr [ esi + hexvar ] call hexvar push hexvar push hexvar push dword ptr [ esi + hexvar ] call hexvar push dword ptr [ esi + hexvar ] call hexvar add esp , hexvar push hexvar push hexvar push hexvar push esi call hexvar add esp , hexvar pop esi ret
+,
+,
+,
+push esi mov esi , dword ptr [ esp + num ] lea eax , [ esp + hexvar ] push eax push dword ptr [ esp + hexvar ] push dword ptr [ esp + hexvar ] push hexvar call hexvar add esp , hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar mov eax , dword ptr [ esi + hexvar ] mov dword ptr [ esi + hexvar ] , num test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] test eax , eax je hexvar push num push dword ptr [ esi + hexvar ] call eax add esp , num mov eax , dword ptr [ esp + hexvar ] mov dword ptr [ esi + hexvar ] , num cmp eax , - num je hexvar push eax push num push esi call hexvar add esp , hexvar pop esi ret
+,
+,
+,
+,
+,
+,
+,
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+mov ecx , dword ptr [ esp + num ] test ecx , ecx jne hexvar mov eax , dword ptr [ esp + hexvar ] mov dword ptr [ eax ] , ecx lea eax , [ ecx + num ] ret
+,
+,
+,
+,
+jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] mov al , num ret
+,
+,
+,
+,
+,
+,
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+,
+,
+,
+,
+push esi mov esi , dword ptr [ esp + num ] lea eax , [ esp + hexvar ] push eax push dword ptr [ esp + hexvar ] push dword ptr [ esp + hexvar ] push hexvar call hexvar add esp , hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar mov eax , dword ptr [ esi + hexvar ] mov dword ptr [ esi + hexvar ] , num test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] test eax , eax je hexvar push num push dword ptr [ esi + hexvar ] call eax add esp , num mov eax , dword ptr [ esp + hexvar ] mov dword ptr [ esi + hexvar ] , num cmp eax , - num je hexvar push eax push num push esi call hexvar add esp , hexvar pop esi ret
+,
+,
+,
+,
+,
+,
+,
+,
+push esi mov esi , dword ptr [ esp + hexvar ] push edi cmp esi , num ja hexvar mov edi , dword ptr [ esp + hexvar ] lea eax , [ esp + hexvar ] push eax push esi push edi call hexvar add esp , hexvar test eax , eax je hexvar add dword ptr [ edi + hexvar ] , esi add dword ptr [ edi + num ] , esi mov edx , dword ptr [ esp + hexvar ] mov ecx , dword ptr [ esp + hexvar ] mov eax , dword ptr [ esp + hexvar ] test edx , edx je hexvar dec edx add edx , esi test esi , esi je hexvar nop mov byte ptr [ edx ] , cl lea edx , [ edx - num ] shrd ecx , eax , num shr eax , num sub esi , num jne hexvar test eax , eax ja hexvar jb hexvar test ecx , ecx jne hexvar pop edi mov eax , num pop esi ret
+mov ecx , dword ptr [ esp + num ] cmp ecx , hexvar jg hexvar je hexvar cmp ecx , hexvar mov eax , hexvar mov edx , hexvar cmovne eax , edx ret
+,
+push esi mov esi , dword ptr [ esp + num ] lea eax , [ esp + hexvar ] push eax push dword ptr [ esp + hexvar ] push dword ptr [ esp + hexvar ] push hexvar call hexvar add esp , hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar mov eax , dword ptr [ esi + hexvar ] mov dword ptr [ esi + hexvar ] , num test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] test eax , eax je hexvar push num push dword ptr [ esi + hexvar ] call eax add esp , num mov eax , dword ptr [ esp + hexvar ] mov dword ptr [ esi + hexvar ] , num cmp eax , - num je hexvar push eax push num push esi call hexvar add esp , hexvar pop esi ret
+,
+,
+,
+,
+push esi mov esi , dword ptr [ esp + num ] lea eax , [ esp + hexvar ] push eax push dword ptr [ esp + hexvar ] push dword ptr [ esp + hexvar ] push hexvar call hexvar add esp , hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar mov eax , dword ptr [ esi + hexvar ] mov dword ptr [ esi + hexvar ] , num test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] test eax , eax je hexvar push num push dword ptr [ esi + hexvar ] call eax add esp , num mov eax , dword ptr [ esp + hexvar ] mov dword ptr [ esi + hexvar ] , num cmp eax , - num je hexvar push eax push num push esi call hexvar add esp , hexvar pop esi ret
+mov ecx , dword ptr [ esp + num ] mov eax , dword ptr [ ecx ] mov eax , dword ptr [ eax + hexvar ] mov eax , dword ptr [ eax + hexvar ] test byte ptr [ eax + hexvar ] , num je hexvar xor eax , eax ret
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+,
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+,
+,
+,
+,
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+mov eax , dword ptr [ esp + num ] mov ecx , dword ptr [ eax + hexvar ] test ecx , ecx je hexvar mov edx , dword ptr [ esp + num ] test edx , edx je hexvar mov eax , dword ptr [ eax + hexvar ] sub eax , dword ptr [ ecx + hexvar ] mov dword ptr [ edx ] , eax mov eax , num ret
+,
+,
+,
+,
+,
+,
+,
+,
+push esi mov esi , dword ptr [ esp + num ] lea eax , [ esp + hexvar ] push eax push dword ptr [ esp + hexvar ] push dword ptr [ esp + hexvar ] push hexvar call hexvar add esp , hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar mov eax , dword ptr [ esi + hexvar ] mov dword ptr [ esi + hexvar ] , num test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] test eax , eax je hexvar push num push dword ptr [ esi + hexvar ] call eax add esp , num mov eax , dword ptr [ esp + hexvar ] mov dword ptr [ esi + hexvar ] , num cmp eax , - num je hexvar push eax push num push esi call hexvar add esp , hexvar pop esi ret
+mov ecx , dword ptr [ esp + num ] mov eax , dword ptr [ ecx + hexvar ] test eax , eax je hexvar cmp dword ptr [ eax ] , num je hexvar push num push eax push ecx call hexvar add esp , hexvar ret
+,
+mov ecx , dword ptr [ esp + num ] test ecx , ecx je hexvar xor eax , eax cmp dword ptr [ ecx ] , eax cmove eax , ecx test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] ret
+push esi mov esi , dword ptr [ esp + num ] lea eax , [ esp + hexvar ] push eax push dword ptr [ esp + hexvar ] push dword ptr [ esp + hexvar ] push hexvar call hexvar add esp , hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar mov eax , dword ptr [ esi + hexvar ] mov dword ptr [ esi + hexvar ] , num test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] test eax , eax je hexvar push num push dword ptr [ esi + hexvar ] call eax add esp , num mov eax , dword ptr [ esp + hexvar ] mov dword ptr [ esi + hexvar ] , num cmp eax , - num je hexvar push eax push num push esi call hexvar add esp , hexvar pop esi ret
+,
+,
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+,
+,
+,
+,
+,
+,
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+,
+,
+,
+,
+,
+,
+,
+,
+push ebx push esi mov esi , dword ptr [ esp + hexvar ] mov eax , dword ptr [ esi + hexvar ] mov ecx , dword ptr [ eax + hexvar ] test byte ptr [ ecx + hexvar ] , num jne hexvar mov eax , dword ptr [ eax ] cmp eax , hexvar jl hexvar cmp eax , hexvar jne hexvar mov eax , dword ptr [ esi + hexvar ] cmp eax , num je hexvar cmp eax , num je hexvar cmp eax , num je hexvar cmp eax , num je hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar push dword ptr [ esp + hexvar ] mov eax , dword ptr [ ecx + hexvar ] call eax jmp hexvar push dword ptr [ esp + hexvar ] call hexvar add esp , num mov ebx , eax cmp dword ptr [ esi + hexvar ] , hexvar jne hexvar cmp ebx , hexvar jne hexvar lea ebx , [ eax - hexvar ] jmp hexvar test ebx , ebx js hexvar test byte ptr [ esi + hexvar ] , num je hexvar test ebx , ebx jne hexvar mov eax , dword ptr [ esp + hexvar ] cmp eax , num jne hexvar mov ecx , dword ptr [ esi + hexvar ] test ecx , ecx je hexvar push ecx push dword ptr [ esi + hexvar ] call hexvar mov eax , dword ptr [ esp + hexvar ] add esp , num mov byte ptr [ esi + hexvar ] , al lea eax , [ esi + hexvar ] push eax mov dword ptr [ esi + hexvar ] , num mov byte ptr [ esi + hexvar ] , bl call hexvar add esp , num test eax , eax jne hexvar mov eax , dword ptr [ esi + hexvar ] push esi mov eax , dword ptr [ eax + hexvar ] call eax add esp , num pop esi pop ebx ret
+jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] mov al , num ret
+,
+,
+push esi mov esi , dword ptr [ esp + num ] push edi push dword ptr [ esp + hexvar ] mov edi , dword ptr [ esp + hexvar ] push edi push esi call hexvar add esp , hexvar test eax , eax jne hexvar pop edi pop esi ret
+,
+,
+,
+,
+,
+,
+push esi push edi mov edi , dword ptr [ esp + hexvar ] test edi , edi je hexvar xor esi , esi cmp dword ptr [ edi ] , esi cmove esi , edi test esi , esi je hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar test byte ptr [ esi + hexvar ] , num jne hexvar push esi call hexvar add esp , num test eax , eax jne hexvar push esi call hexvar add esp , num test eax , eax jne hexvar push dword ptr [ esi + hexvar ] push dword ptr [ esi + hexvar ] call hexvar add esp , num mov eax , dword ptr [ edi + num ] cmp eax , dword ptr [ edi + hexvar ] je hexvar push eax push edi call hexvar add esp , num test eax , eax je hexvar mov edi , dword ptr [ esp + hexvar ] test edi , edi je hexvar mov ecx , num lea eax , [ edi + hexvar ] lock xadd dword ptr [ eax ] , ecx mov ecx , dword ptr [ edi + hexvar ] mov dword ptr [ esi + hexvar ] , ecx push dword ptr [ esi + hexvar ] call hexvar add esp , num mov dword ptr [ esi + hexvar ] , edi mov eax , num pop edi pop esi ret
+,
+,
+,
+,
+,
+,
+push ebx push esi mov esi , dword ptr [ esp + hexvar ] mov eax , dword ptr [ esi + hexvar ] mov ecx , dword ptr [ eax + hexvar ] test byte ptr [ ecx + hexvar ] , num jne hexvar mov eax , dword ptr [ eax ] cmp eax , hexvar jl hexvar cmp eax , hexvar jne hexvar mov eax , dword ptr [ esi + hexvar ] cmp eax , num je hexvar cmp eax , num je hexvar cmp eax , num je hexvar cmp eax , num je hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar push dword ptr [ esp + hexvar ] mov eax , dword ptr [ ecx + hexvar ] call eax jmp hexvar push dword ptr [ esp + hexvar ] call hexvar add esp , num mov ebx , eax cmp dword ptr [ esi + hexvar ] , hexvar jne hexvar cmp ebx , hexvar jne hexvar lea ebx , [ eax - hexvar ] jmp hexvar test ebx , ebx js hexvar test byte ptr [ esi + hexvar ] , num je hexvar test ebx , ebx jne hexvar mov eax , dword ptr [ esp + hexvar ] cmp eax , num jne hexvar mov ecx , dword ptr [ esi + hexvar ] test ecx , ecx je hexvar push ecx push dword ptr [ esi + hexvar ] call hexvar mov eax , dword ptr [ esp + hexvar ] add esp , num mov byte ptr [ esi + hexvar ] , al lea eax , [ esi + hexvar ] push eax mov dword ptr [ esi + hexvar ] , num mov byte ptr [ esi + hexvar ] , bl call hexvar add esp , num test eax , eax jne hexvar mov eax , dword ptr [ esi + hexvar ] push esi mov eax , dword ptr [ eax + hexvar ] call eax add esp , num pop esi pop ebx ret
+,
+push esi mov esi , dword ptr [ esp + num ] push edi cmp dword ptr [ esi + hexvar ] , num jne hexvar lea eax , [ esp + hexvar ] push eax push num push num push dword ptr [ esi + hexvar ] call hexvar mov edi , eax add esp , hexvar test edi , edi jg hexvar call hexvar push hexvar push hexvar push hexvar call hexvar push num push hexvar push hexvar push esi call hexvar add esp , hexvar xor eax , eax pop edi pop esi ret
+,
+,
+,
+,
+,
+,
+,
+push esi mov esi , dword ptr [ esp + hexvar ] push edi cmp esi , num ja hexvar mov edi , dword ptr [ esp + hexvar ] lea eax , [ esp + hexvar ] push eax push esi push edi call hexvar add esp , hexvar test eax , eax je hexvar add dword ptr [ edi + hexvar ] , esi add dword ptr [ edi + num ] , esi mov edx , dword ptr [ esp + hexvar ] mov ecx , dword ptr [ esp + hexvar ] mov eax , dword ptr [ esp + hexvar ] test edx , edx je hexvar dec edx add edx , esi test esi , esi je hexvar nop mov byte ptr [ edx ] , cl lea edx , [ edx - num ] shrd ecx , eax , num shr eax , num sub esi , num jne hexvar test eax , eax ja hexvar jb hexvar test ecx , ecx jne hexvar pop edi mov eax , num pop esi ret
+mov ecx , dword ptr [ esp + num ] mov eax , dword ptr [ ecx + hexvar ] test eax , eax je hexvar cmp dword ptr [ eax ] , num je hexvar push num push eax push ecx call hexvar add esp , hexvar ret
+mov ecx , dword ptr [ esp + num ] mov eax , dword ptr [ ecx + hexvar ] cmp eax , dword ptr [ ecx + hexvar ] jb hexvar mov eax , dword ptr [ ecx + hexvar ] push dword ptr [ ecx + hexvar ] mov eax , dword ptr [ eax + hexvar ] call eax add esp , num test eax , eax jne hexvar ret
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+,
+,
+,
+,
+,
+,
+,
+push esi mov esi , dword ptr [ esp + num ] push edi mov edi , dword ptr [ esp + hexvar ] cmp edi , - num jne hexvar mov eax , dword ptr [ esi + hexvar ] cmp eax , hexvar je hexvar cmp eax , hexvar jne hexvar mov eax , dword ptr [ esi + hexvar ] mov dword ptr [ esi + hexvar ] , num test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] test eax , eax je hexvar push num push dword ptr [ esi + hexvar ] call eax add esp , num jmp hexvar cmp dword ptr [ esi + hexvar ] , num jne hexvar mov eax , dword ptr [ esi + hexvar ] test edi , edi je hexvar cmp eax , hexvar je hexvar cmp eax , hexvar jne hexvar cmp dword ptr [ esi + hexvar ] , num jne hexvar pop edi pop esi ret
+,
+,
+,
+jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+,
+push esi mov esi , dword ptr [ esp + hexvar ] push edi cmp esi , num ja hexvar mov edi , dword ptr [ esp + hexvar ] lea eax , [ esp + hexvar ] push eax push esi push edi call hexvar add esp , hexvar test eax , eax je hexvar add dword ptr [ edi + hexvar ] , esi add dword ptr [ edi + num ] , esi mov edx , dword ptr [ esp + hexvar ] mov ecx , dword ptr [ esp + hexvar ] mov eax , dword ptr [ esp + hexvar ] test edx , edx je hexvar dec edx add edx , esi test esi , esi je hexvar nop mov byte ptr [ edx ] , cl lea edx , [ edx - num ] shrd ecx , eax , num shr eax , num sub esi , num jne hexvar test eax , eax ja hexvar jb hexvar test ecx , ecx jne hexvar pop edi mov eax , num pop esi ret
+,
+jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] jmp dword ptr [ hexvar ] mov al , num ret
+push esi mov esi , dword ptr [ esp + num ] push edi push dword ptr [ esp + hexvar ] mov edi , dword ptr [ esp + hexvar ] push edi push esi call hexvar add esp , hexvar test eax , eax jne hexvar pop edi pop esi ret
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+push esi mov esi , dword ptr [ esp + num ] push edi xor edi , edi test esi , esi je hexvar cmp dword ptr [ esi ] , edi cmove edi , esi cmp dword ptr [ esp + hexvar ] , num jle hexvar pop edi xor eax , eax pop esi ret
+mov ecx , dword ptr [ esp + num ] test ecx , ecx je hexvar xor eax , eax cmp dword ptr [ ecx ] , eax cmove eax , ecx test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] ret
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+,
+,
+,
+,
+,
+,
+,
+,
+mov eax , hexvar call hexvar push esi mov esi , dword ptr [ esp + hexvar ] cmp dword ptr [ esi + hexvar ] , num jle hexvar mov eax , dword ptr [ esi + hexvar ] push esi mov eax , dword ptr [ eax + hexvar ] call eax add esp , num test eax , eax jle hexvar push edi mov edi , dword ptr [ esp + hexvar ] test edi , edi je hexvar push esi call hexvar add esp , num cmp edi , eax jbe hexvar call hexvar push hexvar push hexvar push hexvar call hexvar push num push hexvar push hexvar push esi call hexvar add esp , hexvar pop edi xor eax , eax pop esi add esp , hexvar ret
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+,
+push esi mov esi , dword ptr [ esp + hexvar ] push edi cmp esi , num ja hexvar mov edi , dword ptr [ esp + hexvar ] lea eax , [ esp + hexvar ] push eax push esi push edi call hexvar add esp , hexvar test eax , eax je hexvar add dword ptr [ edi + hexvar ] , esi add dword ptr [ edi + num ] , esi mov edx , dword ptr [ esp + hexvar ] mov ecx , dword ptr [ esp + hexvar ] mov eax , dword ptr [ esp + hexvar ] test edx , edx je hexvar dec edx add edx , esi test esi , esi je hexvar nop mov byte ptr [ edx ] , cl lea edx , [ edx - num ] shrd ecx , eax , num shr eax , num sub esi , num jne hexvar test eax , eax ja hexvar jb hexvar test ecx , ecx jne hexvar pop edi mov eax , num pop esi ret
+,
+,
+,
+push num push dword ptr [ esp + hexvar ] push dword ptr [ esp + hexvar ] call hexvar add esp , hexvar ret
+,
+,
+mov eax , dword ptr [ esp + num ] test eax , eax je hexvar push eax call hexvar jmp hexvar push dword ptr [ esp + num ] call hexvar add esp , num cmp eax , num jle hexvar mov eax , num jmp hexvar xor ecx , ecx test eax , eax cmovs eax , ecx mov ecx , dword ptr [ esp + hexvar ] test ecx , ecx je hexvar mov dword ptr [ ecx ] , eax mov eax , dword ptr [ eax * num + hexvar ] ret
+,
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+,
+,
+,
+,
+,
+,
+,
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+,
+,
+,
+,
+mov eax , hexvar call hexvar push ebx push esi mov esi , dword ptr [ esp + hexvar ] mov ebx , num push edi xor edi , edi test esi , esi je hexvar cmp dword ptr [ esi ] , edi cmove edi , esi cmp dword ptr [ edi + hexvar ] , num jne hexvar call hexvar push hexvar push hexvar push hexvar call hexvar push num push hexvar push hexvar call hexvar add esp , hexvar or eax , hexvar pop edi pop esi pop ebx add esp , hexvar ret
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+push esi mov esi , dword ptr [ esp + num ] push edi xor edi , edi test esi , esi je hexvar cmp dword ptr [ esi ] , edi cmove edi , esi cmp dword ptr [ esp + hexvar ] , num jle hexvar pop edi xor eax , eax pop esi ret
+,
+,
+,
+,
+,
+push esi mov esi , dword ptr [ esp + num ] lea eax , [ esp + hexvar ] push eax push dword ptr [ esp + hexvar ] push dword ptr [ esp + hexvar ] push hexvar call hexvar add esp , hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar mov eax , dword ptr [ esi + hexvar ] mov dword ptr [ esi + hexvar ] , num test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] test eax , eax je hexvar push num push dword ptr [ esi + hexvar ] call eax add esp , num mov eax , dword ptr [ esp + hexvar ] mov dword ptr [ esi + hexvar ] , num cmp eax , - num je hexvar push eax push num push esi call hexvar add esp , hexvar pop esi ret
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+mov eax , dword ptr [ esp + num ] mov eax , dword ptr [ eax ] ret
+,
+,
+push esi mov esi , dword ptr [ esp + hexvar ] push edi test esi , esi je hexvar mov edi , dword ptr [ esp + hexvar ] lea eax , [ esp + hexvar ] push eax push esi push edi call hexvar add esp , hexvar test eax , eax je hexvar add dword ptr [ edi + hexvar ] , esi add dword ptr [ edi + num ] , esi mov eax , dword ptr [ esp + hexvar ] test eax , eax je hexvar push esi push dword ptr [ esp + hexvar ] push eax call hexvar add esp , hexvar pop edi mov eax , num pop esi ret
+,
+,
+push esi mov esi , dword ptr [ esp + hexvar ] push esi call hexvar add esp , num test eax , eax jne hexvar call hexvar push dword ptr [ esp + hexvar ] push esi call hexvar add esp , num push eax push dword ptr [ esp + hexvar ] call hexvar add esp , hexvar mov esi , eax call hexvar mov eax , esi pop esi ret
+test dword ptr [ esp + hexvar ] , hexvar mov ecx , dword ptr [ esp + num ] push esi mov esi , dword ptr [ esp + num ] push edi je hexvar mov edx , num jmp hexvar mov edx , dword ptr [ esi + hexvar ] mov eax , dword ptr [ edx + hexvar ] test byte ptr [ eax + hexvar ] , num jne hexvar mov eax , dword ptr [ edx ] cmp eax , hexvar jl hexvar cmp eax , hexvar je hexvar mov edx , num jmp hexvar xor edx , edx mov eax , dword ptr [ esi + hexvar ] mov eax , dword ptr [ eax + hexvar ] test byte ptr [ eax + hexvar ] , num je hexvar test cl , num jne hexvar cmp dword ptr [ esi + hexvar ] , hexvar jne hexvar test cl , num je hexvar test edx , edx je hexvar test cl , hexvar jne hexvar mov eax , ecx and eax , hexvar jmp hexvar mov eax , ecx and eax , hexvar je hexvar test byte ptr [ esp + hexvar ] , hexvar je hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar test edx , edx jne hexvar test eax , eax je hexvar pop edi xor eax , eax pop esi ret
+,
+,
+,
+,
+,
+test dword ptr [ esp + hexvar ] , hexvar mov ecx , dword ptr [ esp + num ] push esi mov esi , dword ptr [ esp + num ] push edi je hexvar mov edx , num jmp hexvar mov edx , dword ptr [ esi + hexvar ] mov eax , dword ptr [ edx + hexvar ] test byte ptr [ eax + hexvar ] , num jne hexvar mov eax , dword ptr [ edx ] cmp eax , hexvar jl hexvar cmp eax , hexvar je hexvar mov edx , num jmp hexvar xor edx , edx mov eax , dword ptr [ esi + hexvar ] mov eax , dword ptr [ eax + hexvar ] test byte ptr [ eax + hexvar ] , num je hexvar test cl , num jne hexvar cmp dword ptr [ esi + hexvar ] , hexvar jne hexvar test cl , num je hexvar test edx , edx je hexvar test cl , hexvar jne hexvar mov eax , ecx and eax , hexvar jmp hexvar mov eax , ecx and eax , hexvar je hexvar test byte ptr [ esp + hexvar ] , hexvar je hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar test edx , edx jne hexvar test eax , eax je hexvar pop edi xor eax , eax pop esi ret
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+mov eax , hexvar call hexvar mov eax , dword ptr [ hexvar ] xor eax , esp mov dword ptr [ esp + hexvar ] , eax push esi mov esi , dword ptr [ esp + hexvar ] lea eax , [ esp + num ] push num push hexvar push eax mov eax , dword ptr [ esi + num ] push dword ptr [ eax ] call hexvar add esp , hexvar test eax , eax jle hexvar push dword ptr [ esi + hexvar ] lea eax , [ esp + num ] push hexvar push eax call hexvar mov dword ptr [ esi + hexvar ] , eax lea eax , [ esp + hexvar ] push hexvar push eax call hexvar push dword ptr [ esi + hexvar ] push dword ptr [ esi + hexvar ] push dword ptr [ esi + hexvar ] call hexvar xor ecx , ecx mov dword ptr [ esi + hexvar ] , eax add esp , hexvar test eax , eax setne cl mov eax , ecx pop esi mov ecx , dword ptr [ esp + hexvar ] xor ecx , esp call hexvar add esp , hexvar ret
+,
+,
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+,
+,
+,
+,
+,
+,
+,
+push esi mov esi , dword ptr [ esp + num ] lea eax , [ esp + hexvar ] push eax push dword ptr [ esp + hexvar ] push dword ptr [ esp + hexvar ] push hexvar call hexvar add esp , hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar mov eax , dword ptr [ esi + hexvar ] mov dword ptr [ esi + hexvar ] , num test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] test eax , eax je hexvar push num push dword ptr [ esi + hexvar ] call eax add esp , num mov eax , dword ptr [ esp + hexvar ] mov dword ptr [ esi + hexvar ] , num cmp eax , - num je hexvar push eax push num push esi call hexvar add esp , hexvar pop esi ret
+,
+,
+,
+,
+,
+mov eax , dword ptr [ esp + num ] test eax , eax je hexvar xor edx , edx cmp dword ptr [ eax ] , edx cmove edx , eax test edx , edx je hexvar mov eax , dword ptr [ edx + hexvar ] mov edx , dword ptr [ edx + hexvar ] ret
+,
+,
+,
+,
+push esi mov esi , dword ptr [ esp + num ] lea eax , [ esp + hexvar ] push eax push dword ptr [ esp + hexvar ] push dword ptr [ esp + hexvar ] push hexvar call hexvar add esp , hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar mov eax , dword ptr [ esi + hexvar ] mov dword ptr [ esi + hexvar ] , num test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] test eax , eax je hexvar push num push dword ptr [ esi + hexvar ] call eax add esp , num mov eax , dword ptr [ esp + hexvar ] mov dword ptr [ esi + hexvar ] , num cmp eax , - num je hexvar push eax push num push esi call hexvar add esp , hexvar pop esi ret
+,
+,
+,
+mov ecx , dword ptr [ esp + num ] test ecx , ecx je hexvar xor eax , eax cmp dword ptr [ ecx ] , eax cmove eax , ecx test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] test eax , eax jne hexvar mov eax , dword ptr [ ecx + num ] test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] ret
+,
+,
+push esi mov esi , dword ptr [ esp + num ] lea eax , [ esp + hexvar ] push eax push dword ptr [ esp + hexvar ] push dword ptr [ esp + hexvar ] push hexvar call hexvar add esp , hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar mov eax , dword ptr [ esi + hexvar ] mov dword ptr [ esi + hexvar ] , num test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] test eax , eax je hexvar push num push dword ptr [ esi + hexvar ] call eax add esp , num mov eax , dword ptr [ esp + hexvar ] mov dword ptr [ esi + hexvar ] , num cmp eax , - num je hexvar push eax push num push esi call hexvar add esp , hexvar pop esi ret
+,
+mov ecx , dword ptr [ esp + num ] test ecx , ecx je hexvar xor eax , eax cmp dword ptr [ ecx ] , eax cmove eax , ecx test eax , eax je hexvar cmp dword ptr [ eax + hexvar ] , num jne hexvar cmp dword ptr [ eax + hexvar ] , num jne hexvar mov eax , num ret
+,
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+mov ecx , dword ptr [ esp + num ] mov eax , dword ptr [ ecx + hexvar ] test eax , eax je hexvar cmp dword ptr [ eax ] , num je hexvar push num push eax push ecx call hexvar add esp , hexvar ret
+,
+,
+,
+,
+,
+,
+,
+,
+cmp ecx , dword ptr [ hexvar ] jne hexvar ret
+,
+,
+,
+,
+mov ecx , dword ptr [ esp + num ] test ecx , ecx je hexvar xor eax , eax cmp dword ptr [ ecx ] , eax cmove eax , ecx test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] ret
+,
+,
+push esi mov esi , dword ptr [ esp + num ] push edi push dword ptr [ esp + hexvar ] push esi call hexvar add esp , num test eax , eax je hexvar push dword ptr [ esp + hexvar ] mov edi , dword ptr [ esp + hexvar ] push edi push esi call hexvar add esp , hexvar test eax , eax je hexvar add dword ptr [ esi + hexvar ] , edi add dword ptr [ esi + num ] , edi mov eax , dword ptr [ esi + hexvar ] test eax , eax je hexvar cmp dword ptr [ eax ] , num je hexvar push num push eax push esi call hexvar add esp , hexvar xor ecx , ecx test eax , eax setne cl pop edi mov eax , ecx pop esi ret
+,
+,
+,
+,
+,
+push esi mov esi , dword ptr [ esp + num ] push esi call hexvar movzx ecx , al add esp , num cmp ecx , hexvar jae hexvar mov eax , dword ptr [ esi + num ] pop esi mov eax , dword ptr [ eax + ecx * num + hexvar ] ret
+,
+,
+,
+,
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+,
+,
+mov eax , dword ptr [ esp + num ] mov eax , dword ptr [ eax + hexvar ] ret
+,
+push esi mov esi , dword ptr [ esp + num ] lea eax , [ esp + hexvar ] push eax push dword ptr [ esp + hexvar ] push dword ptr [ esp + hexvar ] push hexvar call hexvar add esp , hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar mov eax , dword ptr [ esi + hexvar ] mov dword ptr [ esi + hexvar ] , num test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] test eax , eax je hexvar push num push dword ptr [ esi + hexvar ] call eax add esp , num mov eax , dword ptr [ esp + hexvar ] mov dword ptr [ esi + hexvar ] , num cmp eax , - num je hexvar push eax push num push esi call hexvar add esp , hexvar pop esi ret
+,
+,
+,
+,
+,
+,
+push num push dword ptr [ esp + hexvar ] call hexvar add esp , num push eax push dword ptr [ esp + hexvar ] mov eax , dword ptr [ esp + hexvar ] push dword ptr [ esp + hexvar ] push dword ptr [ eax + num ] call hexvar add esp , hexvar ret
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+mov eax , dword ptr [ esp + hexvar ] push esi mov esi , dword ptr [ esp + num ] test eax , eax jne hexvar mov eax , dword ptr [ esp + hexvar ] neg eax sbb eax , eax add eax , num mov dword ptr [ esi + hexvar ] , eax or eax , hexvar pop esi ret
+push esi mov esi , dword ptr [ esp + num ] lea eax , [ esp + hexvar ] push eax push dword ptr [ esp + hexvar ] push dword ptr [ esp + hexvar ] push hexvar call hexvar add esp , hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar mov eax , dword ptr [ esi + hexvar ] mov dword ptr [ esi + hexvar ] , num test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] test eax , eax je hexvar push num push dword ptr [ esi + hexvar ] call eax add esp , num mov eax , dword ptr [ esp + hexvar ] mov dword ptr [ esi + hexvar ] , num cmp eax , - num je hexvar push eax push num push esi call hexvar add esp , hexvar pop esi ret
+,
+,
+,
+,
+,
+,
+,
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+push esi mov esi , dword ptr [ esp + num ] lea eax , [ esp + hexvar ] push eax push dword ptr [ esp + hexvar ] push dword ptr [ esp + hexvar ] push hexvar call hexvar add esp , hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar mov eax , dword ptr [ esi + hexvar ] mov dword ptr [ esi + hexvar ] , num test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] test eax , eax je hexvar push num push dword ptr [ esi + hexvar ] call eax add esp , num mov eax , dword ptr [ esp + hexvar ] mov dword ptr [ esi + hexvar ] , num cmp eax , - num je hexvar push eax push num push esi call hexvar add esp , hexvar pop esi ret
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+cmp ecx , dword ptr [ hexvar ] jne hexvar ret
+,
+,
+,
+,
+,
+push esi mov esi , dword ptr [ esp + num ] lea eax , [ esp + hexvar ] push eax push dword ptr [ esp + hexvar ] push dword ptr [ esp + hexvar ] push hexvar call hexvar add esp , hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar mov eax , dword ptr [ esi + hexvar ] mov dword ptr [ esi + hexvar ] , num test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] test eax , eax je hexvar push num push dword ptr [ esi + hexvar ] call eax add esp , num mov eax , dword ptr [ esp + hexvar ] mov dword ptr [ esi + hexvar ] , num cmp eax , - num je hexvar push eax push num push esi call hexvar add esp , hexvar pop esi ret
+,
+,
+,
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+,
+mov ecx , dword ptr [ esp + num ] mov eax , dword ptr [ ecx + hexvar ] mov eax , dword ptr [ eax + hexvar ] and eax , hexvar cmp eax , hexvar je hexvar cmp eax , hexvar je hexvar cmp eax , hexvar mov eax , dword ptr [ esp + num ] je hexvar mov edx , dword ptr [ ecx + hexvar ] test edx , edx jne hexvar mov edx , dword ptr [ ecx + num ] mov ecx , dword ptr [ edx + hexvar ] mov dword ptr [ eax ] , ecx mov eax , dword ptr [ esp + hexvar ] mov ecx , dword ptr [ edx + hexvar ] mov dword ptr [ eax ] , ecx ret
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+mov eax , hexvar ret
+mov eax , hexvar call hexvar push esi push hexvar push hexvar xor esi , esi mov dword ptr [ esp + hexvar ] , hexvar push hexvar mov dword ptr [ esp + hexvar ] , esi call hexvar add esp , hexvar mov dword ptr [ esp + hexvar ] , eax test eax , eax jne hexvar pop esi add esp , hexvar ret
+mov edx , dword ptr [ esp + num ] mov ecx , dword ptr [ edx + hexvar ] mov eax , dword ptr [ ecx + hexvar ] and eax , hexvar cmp eax , hexvar je hexvar cmp eax , hexvar je hexvar cmp eax , hexvar je hexvar mov eax , dword ptr [ edx + hexvar ] push esi cmp eax , dword ptr [ esp + hexvar ] jne hexvar mov esi , dword ptr [ ecx + hexvar ] test esi , esi je hexvar mov eax , dword ptr [ esp + hexvar ] mov dword ptr [ eax ] , esi mov eax , dword ptr [ edx + hexvar ] pop esi mov eax , dword ptr [ eax + hexvar ] ret
+,
+,
+mov eax , hexvar call hexvar push ebx mov ebx , dword ptr [ esp + hexvar ] push ebp mov ebp , dword ptr [ esp + hexvar ] push esi mov ebx , dword ptr [ ebx + hexvar ] mov esi , dword ptr [ esp + hexvar ] mov dword ptr [ esp + hexvar ] , ebp push edi test ebx , ebx je hexvar mov edi , dword ptr [ esp + hexvar ] test edi , edi je hexvar push hexvar push hexvar call hexvar mov eax , dword ptr [ esp + hexvar ] add esp , num mov dword ptr [ edi ] , num mov eax , dword ptr [ eax + hexvar ] mov dword ptr [ esp + hexvar ] , eax mov eax , dword ptr [ hexvar ] test eax , eax je hexvar lea ecx , [ esp + hexvar ] push ecx push eax call hexvar add esp , num test eax , eax js hexvar push eax push dword ptr [ hexvar ] call hexvar add esp , num mov dword ptr [ edi ] , eax mov edi , dword ptr [ esp + hexvar ] test edi , edi jne hexvar cmp dword ptr [ esp + hexvar ] , edi je hexvar pop edi pop esi pop ebp xor eax , eax pop ebx add esp , hexvar ret
+,
+,
+push esi mov esi , dword ptr [ esp + hexvar ] push edi test esi , esi je hexvar mov edi , dword ptr [ esp + hexvar ] lea eax , [ esp + hexvar ] push eax push esi push edi call hexvar add esp , hexvar test eax , eax je hexvar add dword ptr [ edi + hexvar ] , esi add dword ptr [ edi + num ] , esi mov eax , dword ptr [ esp + hexvar ] test eax , eax je hexvar push esi push dword ptr [ esp + hexvar ] push eax call hexvar add esp , hexvar pop edi mov eax , num pop esi ret
+,
+,
+,
+push edi call hexvar push eax call hexvar mov edi , eax add esp , num test edi , edi jne hexvar call hexvar push hexvar push hexvar push hexvar call hexvar push edi push hexvar push hexvar push dword ptr [ esp + hexvar ] call hexvar add esp , hexvar xor eax , eax pop edi ret
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+mov eax , hexvar call hexvar push ebx push ebp push esi mov esi , dword ptr [ esp + hexvar ] mov dword ptr [ esp + hexvar ] , num push edi mov edi , dword ptr [ esp + hexvar ] mov ecx , dword ptr [ esi + hexvar ] mov eax , dword ptr [ esi + num ] mov dword ptr [ esp + hexvar ] , eax mov dword ptr [ esp + hexvar ] , num mov eax , dword ptr [ ecx + hexvar ] mov dword ptr [ esp + hexvar ] , num mov dword ptr [ esp + hexvar ] , num test byte ptr [ eax + hexvar ] , num jne hexvar mov eax , dword ptr [ ecx ] cmp eax , hexvar jl hexvar cmp eax , hexvar je hexvar mov ecx , dword ptr [ edi + num ] mov edx , dword ptr [ edi ] mov dword ptr [ esp + hexvar ] , ecx test ecx , ecx je hexvar movzx eax , byte ptr [ edx ] dec ecx inc edx cmp ecx , eax jb hexvar mov ebx , edx sub ecx , eax add edx , eax mov dword ptr [ edi + num ] , ecx mov dword ptr [ edi ] , edx cmp dword ptr [ esi + hexvar ] , num je hexvar mov ecx , dword ptr [ esi + hexvar ] test ecx , ecx jne hexvar test eax , eax je hexvar call hexvar push hexvar push hexvar push hexvar call hexvar push num push hexvar jmp hexvar mov edx , dword ptr [ esi + hexvar ] cmp eax , edx jne hexvar push edx push ecx push ebx call hexvar add esp , hexvar neg eax sbb eax , eax add eax , num jne hexvar call hexvar push hexvar push hexvar jmp hexvar test eax , eax je hexvar call hexvar push hexvar push hexvar jmp hexvar call hexvar push hexvar push hexvar jmp hexvar mov edx , dword ptr [ edi + num ] cmp edx , num jb hexvar mov ecx , dword ptr [ edi ] movzx eax , byte ptr [ ecx ] movzx ebx , byte ptr [ ecx + num ] shl eax , num or ebx , eax movzx eax , byte ptr [ ecx + num ] add dword ptr [ edi ] , num shl ebx , num or ebx , eax lea eax , [ edx - num ] mov dword ptr [ edi + num ] , eax cmp eax , ebx jne hexvar test ebx , ebx jne hexvar pop edi pop esi pop ebp lea eax , [ ebx + num ] pop ebx add esp , hexvar ret
+mov ecx , dword ptr [ esp + num ] mov eax , dword ptr [ ecx + hexvar ] test eax , eax je hexvar cmp dword ptr [ eax ] , num je hexvar push num push eax push ecx call hexvar add esp , hexvar ret
+,
+,
+,
+,
+,
+,
+,
+mov ecx , dword ptr [ esp + num ] test ecx , ecx je hexvar xor eax , eax cmp dword ptr [ ecx ] , eax cmove eax , ecx test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] test eax , eax jne hexvar mov eax , dword ptr [ ecx + num ] test eax , eax je hexvar mov eax , dword ptr [ eax + num ] ret
+,
+,
+,
+,
+,
+mov ecx , dword ptr [ esp + num ] mov eax , dword ptr [ ecx + hexvar ] test eax , eax je hexvar mov dl , byte ptr [ eax + hexvar ] lea eax , [ edx - num ] cmp al , num ja hexvar movzx ecx , dl mov eax , hexvar dec ecx shl eax , cl ret
+mov ecx , dword ptr [ esp + num ] test ecx , ecx je hexvar xor eax , eax cmp dword ptr [ ecx ] , eax cmove eax , ecx test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] test eax , eax jne hexvar mov eax , dword ptr [ ecx + num ] test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] ret
+,
+push edi call hexvar push eax call hexvar mov edi , eax add esp , num test edi , edi jne hexvar pop edi ret
+,
+,
+,
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+,
+push esi mov esi , dword ptr [ esp + hexvar ] push edi cmp esi , num ja hexvar mov edi , dword ptr [ esp + hexvar ] lea eax , [ esp + hexvar ] push eax push esi push edi call hexvar add esp , hexvar test eax , eax je hexvar add dword ptr [ edi + hexvar ] , esi add dword ptr [ edi + num ] , esi mov edx , dword ptr [ esp + hexvar ] mov ecx , dword ptr [ esp + hexvar ] mov eax , dword ptr [ esp + hexvar ] test edx , edx je hexvar dec edx add edx , esi test esi , esi je hexvar nop mov byte ptr [ edx ] , cl lea edx , [ edx - num ] shrd ecx , eax , num shr eax , num sub esi , num jne hexvar test eax , eax ja hexvar jb hexvar test ecx , ecx jne hexvar pop edi mov eax , num pop esi ret
+push edi call hexvar push eax call hexvar mov edi , eax add esp , num test edi , edi jne hexvar pop edi ret
+push ebx mov ebx , dword ptr [ esp + num ] push esi xor esi , esi push edi test ebx , ebx je hexvar xor edi , edi cmp dword ptr [ ebx ] , esi cmove edi , ebx test edi , edi je hexvar mov eax , dword ptr [ esp + hexvar ] add eax , - num cmp eax , hexvar ja hexvar movzx eax , byte ptr [ eax + hexvar ] jmp dword ptr [ eax * num + hexvar ] mov esi , dword ptr [ edi + hexvar ] mov eax , esi pop edi pop esi pop ebx ret
+,
+,
+,
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+,
+push esi mov esi , dword ptr [ esp + num ] lea eax , [ esp + hexvar ] push eax push dword ptr [ esp + hexvar ] push dword ptr [ esp + hexvar ] push hexvar call hexvar add esp , hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar mov eax , dword ptr [ esi + hexvar ] mov dword ptr [ esi + hexvar ] , num test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] test eax , eax je hexvar push num push dword ptr [ esi + hexvar ] call eax add esp , num mov eax , dword ptr [ esp + hexvar ] mov dword ptr [ esi + hexvar ] , num cmp eax , - num je hexvar push eax push num push esi call hexvar add esp , hexvar pop esi ret
+,
+mov ecx , dword ptr [ esp + num ] mov eax , dword ptr [ ecx + hexvar ] test eax , eax je hexvar cmp dword ptr [ eax ] , num je hexvar push num push eax push ecx call hexvar add esp , hexvar ret
+,
+,
+push esi mov esi , dword ptr [ esp + hexvar ] push edi test esi , esi je hexvar mov edi , dword ptr [ esp + hexvar ] lea eax , [ esp + hexvar ] push eax push esi push edi call hexvar add esp , hexvar test eax , eax je hexvar add dword ptr [ edi + hexvar ] , esi add dword ptr [ edi + num ] , esi mov eax , dword ptr [ esp + hexvar ] test eax , eax je hexvar push esi push dword ptr [ esp + hexvar ] push eax call hexvar add esp , hexvar pop edi mov eax , num pop esi ret
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+,
+mov ecx , dword ptr [ esp + num ] test ecx , ecx je hexvar xor eax , eax cmp dword ptr [ ecx ] , eax cmove eax , ecx test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] ret
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+push hexvar push hexvar push dword ptr [ esp + hexvar ] call hexvar add esp , hexvar ret
+,
+,
+,
+,
+push edi call hexvar push eax call hexvar mov edi , eax add esp , num test edi , edi jne hexvar pop edi ret
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+,
+,
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+push esi mov esi , dword ptr [ esp + hexvar ] push edi test esi , esi je hexvar mov edi , dword ptr [ esp + hexvar ] lea eax , [ esp + hexvar ] push eax push esi push edi call hexvar add esp , hexvar test eax , eax je hexvar add dword ptr [ edi + hexvar ] , esi add dword ptr [ edi + num ] , esi mov eax , dword ptr [ esp + hexvar ] test eax , eax je hexvar push esi push dword ptr [ esp + hexvar ] push eax call hexvar add esp , hexvar pop edi mov eax , num pop esi ret
+mov eax , dword ptr [ esp + num ] test eax , eax je hexvar xor ecx , ecx cmp dword ptr [ eax ] , ecx cmove ecx , eax test ecx , ecx je hexvar mov eax , dword ptr [ esp + num ] mov dword ptr [ ecx + hexvar ] , eax ret
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+mov ecx , dword ptr [ esp + num ] test ecx , ecx je hexvar xor eax , eax cmp dword ptr [ ecx ] , eax cmove eax , ecx test eax , eax je hexvar cmp dword ptr [ eax + hexvar ] , num jne hexvar cmp dword ptr [ eax + hexvar ] , num jne hexvar mov eax , num ret
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+,
+,
+,
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+mov eax , dword ptr [ esp + num ] xor ecx , ecx push esi mov edx , dword ptr [ eax + hexvar ] test edx , edx je hexvar mov eax , dword ptr [ eax + hexvar ] mov si , word ptr [ esp + hexvar ] nop dword ptr [ eax ] cmp word ptr [ eax + hexvar ] , si je hexvar inc ecx add eax , hexvar cmp ecx , edx jb hexvar xor eax , eax pop esi ret
+,
+,
+push esi mov esi , dword ptr [ esp + num ] lea eax , [ esp + hexvar ] push eax push dword ptr [ esp + hexvar ] push dword ptr [ esp + hexvar ] push hexvar call hexvar add esp , hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar mov eax , dword ptr [ esi + hexvar ] mov dword ptr [ esi + hexvar ] , num test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] test eax , eax je hexvar push num push dword ptr [ esi + hexvar ] call eax add esp , num mov eax , dword ptr [ esp + hexvar ] mov dword ptr [ esi + hexvar ] , num cmp eax , - num je hexvar push eax push num push esi call hexvar add esp , hexvar pop esi ret
+,
+,
+,
+,
+,
+mov eax , dword ptr [ esp + num ] xor edx , edx push ebx push esi push edi mov edi , dword ptr [ eax + num ] mov ecx , dword ptr [ eax ] test edi , edi je hexvar mov ebx , dword ptr [ esp + hexvar ] mov esi , dword ptr [ esp + hexvar ] nop word ptr [ eax + eax ] movzx eax , word ptr [ ecx ] cmp ebx , eax jne hexvar cmp esi , num je hexvar mov eax , dword ptr [ ecx + num ] cmp esi , eax je hexvar cmp eax , num je hexvar inc edx add ecx , hexvar cmp edx , edi jb hexvar pop edi pop esi xor eax , eax pop ebx ret
+mov eax , num call hexvar push ebx xor ebx , ebx cmp dword ptr [ esp + hexvar ] , ebx push edi mov edi , dword ptr [ esp + hexvar ] setne bl add ebx , num mov eax , dword ptr [ edi + num ] test eax , eax jne hexvar call hexvar cmp dword ptr [ esp + hexvar ] , num push hexvar je hexvar push hexvar push hexvar call hexvar push num push hexvar push hexvar push dword ptr [ esp + hexvar ] call hexvar add esp , hexvar xor eax , eax pop edi pop ebx pop ecx ret
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+push edi call hexvar push eax call hexvar mov edi , eax add esp , num test edi , edi jne hexvar pop edi ret
+,
+,
+,
+,
+,
+,
+,
+,
+,
+push ecx lea ecx , [ esp + num ] sub ecx , eax sbb eax , eax not eax and ecx , eax mov eax , esp and eax , hexvar cmp ecx , eax jb hexvar mov eax , ecx pop ecx xchg eax , esp mov eax , dword ptr [ eax ] mov dword ptr [ esp ] , eax ret
+,
+,
+mov ecx , dword ptr [ esp + num ] cmp ecx , hexvar jg hexvar je hexvar cmp ecx , hexvar mov eax , hexvar mov edx , hexvar cmovne eax , edx ret
+,
+,
+,
+,
+,
+,
+,
+push ebx push esi push edi mov edi , dword ptr [ esp + hexvar ] test edi , edi je hexvar cmp dword ptr [ edi + hexvar ] , num je hexvar cmp dword ptr [ edi + num ] , num je hexvar mov ebx , dword ptr [ esp + hexvar ] push hexvar push ebx call hexvar add esp , num test eax , eax jle hexvar push hexvar push ebx call hexvar add esp , num test eax , eax jle hexvar xor esi , esi cmp dword ptr [ edi + hexvar ] , esi jbe hexvar movzx eax , byte ptr [ edi + esi + hexvar ] push eax push hexvar push ebx call hexvar add esp , hexvar test eax , eax jle hexvar inc esi cmp esi , dword ptr [ edi + hexvar ] jb hexvar push hexvar push ebx call hexvar add esp , num test eax , eax jle hexvar xor esi , esi cmp dword ptr [ edi + num ] , esi jbe hexvar nop dword ptr [ eax ] movzx eax , byte ptr [ edi + esi + hexvar ] push eax push hexvar push ebx call hexvar add esp , hexvar test eax , eax jle hexvar inc esi cmp esi , dword ptr [ edi + num ] jb hexvar push hexvar push ebx call hexvar add esp , num xor ecx , ecx test eax , eax setg cl pop edi pop esi mov eax , ecx pop ebx ret
+,
+,
+mov eax , hexvar call hexvar mov eax , dword ptr [ esp + hexvar ] push edi test al , num jne hexvar shr eax , num push hexvar mov dword ptr [ esp + hexvar ] , eax add eax , eax push hexvar push eax call hexvar mov edi , eax add esp , hexvar mov dword ptr [ esp + num ] , edi test edi , edi je hexvar push ebx push ebp mov ebp , dword ptr [ esp + hexvar ] xor ebx , ebx mov dword ptr [ esp + hexvar ] , edi push esi test ebp , ebp je hexvar mov edi , dword ptr [ esp + hexvar ] mov edx , dword ptr [ edi ] lea edi , [ edi + num ] mov esi , dword ptr [ edi - num ] xor ecx , ecx mov eax , hexvar cmp dword ptr [ eax + num ] , edx jne hexvar cmp dword ptr [ eax + hexvar ] , esi je hexvar inc ecx add eax , hexvar cmp ecx , hexvar jb hexvar jmp hexvar mov edx , dword ptr [ esp + hexvar ] mov ax , word ptr [ eax + num ] mov word ptr [ edx ] , ax add edx , num mov dword ptr [ esp + hexvar ] , edx cmp ecx , hexvar je hexvar add ebx , num cmp ebx , ebp jb hexvar mov edi , dword ptr [ esp + hexvar ] cmp dword ptr [ esp + hexvar ] , num mov esi , dword ptr [ esp + hexvar ] je hexvar push hexvar push hexvar push dword ptr [ esi + hexvar ] call hexvar mov eax , dword ptr [ esp + hexvar ] add esp , hexvar mov dword ptr [ esi + hexvar ] , edi mov dword ptr [ esi + hexvar ] , eax mov eax , num pop esi pop ebp pop ebx pop edi add esp , hexvar ret
+,
+,
+mov ecx , dword ptr [ esp + num ] mov eax , dword ptr [ ecx + hexvar ] test eax , eax je hexvar cmp dword ptr [ eax ] , num je hexvar push num push eax push ecx call hexvar add esp , hexvar ret
+,
+,
+,
+push esi mov esi , dword ptr [ esp + num ] lea eax , [ esp + hexvar ] push eax push dword ptr [ esp + hexvar ] push dword ptr [ esp + hexvar ] push hexvar call hexvar add esp , hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar mov eax , dword ptr [ esi + hexvar ] mov dword ptr [ esi + hexvar ] , num test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] test eax , eax je hexvar push num push dword ptr [ esi + hexvar ] call eax add esp , num mov eax , dword ptr [ esp + hexvar ] mov dword ptr [ esi + hexvar ] , num cmp eax , - num je hexvar push eax push num push esi call hexvar add esp , hexvar pop esi ret
+,
+,
+,
+mov ecx , dword ptr [ esp + num ] push esi mov edx , dword ptr [ ecx + hexvar ] test dl , num je hexvar mov esi , dword ptr [ ecx + hexvar ] mov eax , dword ptr [ esi + hexvar ] test byte ptr [ eax + hexvar ] , num jne hexvar mov eax , dword ptr [ esi ] cmp eax , hexvar jl hexvar cmp eax , hexvar je hexvar test dl , num je hexvar cmp dword ptr [ ecx + hexvar ] , num jne hexvar cmp dword ptr [ ecx + hexvar ] , num jl hexvar test dl , num jne hexvar mov eax , dword ptr [ ecx + hexvar ] mov eax , dword ptr [ eax + hexvar ] test al , num je hexvar test dl , num je hexvar test al , hexvar mov eax , num pop esi sete al ret
+,
+,
+,
+,
+,
+,
+,
+,
+,
+push ebx push ebp mov ebp , dword ptr [ esp + hexvar ] mov edx , num push esi push edi mov edi , dword ptr [ esp + hexvar ] mov eax , dword ptr [ edi + hexvar ] test ebp , hexvar je hexvar xor edx , edx cmp dword ptr [ edi + hexvar ] , edx setne dl mov ebx , dword ptr [ eax + hexvar ] xor ecx , ecx mov esi , dword ptr [ eax + hexvar ] test ebx , ebx je hexvar movzx eax , word ptr [ esi ] cmp dword ptr [ esp + hexvar ] , eax jne hexvar cmp edx , num je hexvar mov eax , dword ptr [ esi + num ] cmp edx , eax je hexvar cmp eax , num je hexvar inc ecx add esi , hexvar cmp ecx , ebx jb hexvar pop edi pop esi pop ebp mov eax , num pop ebx ret
+,
+,
+,
+,
+push esi mov esi , dword ptr [ esp + num ] lea eax , [ esp + hexvar ] push eax push dword ptr [ esp + hexvar ] push dword ptr [ esp + hexvar ] push hexvar call hexvar add esp , hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar cmp dword ptr [ esi + hexvar ] , num je hexvar mov eax , dword ptr [ esi + hexvar ] mov dword ptr [ esi + hexvar ] , num test eax , eax je hexvar mov eax , dword ptr [ eax + hexvar ] test eax , eax je hexvar push num push dword ptr [ esi + hexvar ] call eax add esp , num mov eax , dword ptr [ esp + hexvar ] mov dword ptr [ esi + hexvar ] , num cmp eax , - num je hexvar push eax push num push esi call hexvar add esp , hexvar pop esi ret
+,
+,
+,
+,
