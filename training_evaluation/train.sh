@@ -11,15 +11,15 @@ PEAK_LR=1e-5                            # Peak learning rate, adjust as needed
 TOKENS_PER_SAMPLE=512                   # Max sequence length
 MAX_POSITIONS=512                       # Num. positional embeddings (usually same as above)
 MAX_SENTENCES=4                         # Number of sequences per batch (batch size)
-NUM_CLASSES=3069                        # Vocabulary size of internal function name words, plus one for <unk> token (OOV words)
-NUM_EXTERNAL=948                        # Vocabulary size of external function names
+NUM_CLASSES=445                        # Vocabulary size of internal function name words, plus one for <unk> token (OOV words)
+NUM_EXTERNAL=148                        # Vocabulary size of external function names
 NUM_CALLS=1                             # Number of callers/internal callees/external callees per batch (batch size)
 ENCODER_EMB_DIM=768                     # Embedding dimension for encoder
 ENCODER_LAYERS=8                        # Number of encoder layers
 ENCODER_ATTENTION_HEADS=12              # Number of attention heads for encoder
 TOTAL_EPOCHs=25                         # Total number of training epochs
 EXTERNAL_EMB="embedding"                # External callee embedding methods, options: (one_hot, embedding)
-DATASET_PATH="data_bin"                 # Path to the binarized dataset
+DATASET_PATH="pe_dataset_bin"                 # Path to the binarized dataset
 
 CUDA_VISIBLE_DEVICES=0 python train.py \
   $DATASET_PATH \
