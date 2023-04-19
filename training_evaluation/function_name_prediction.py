@@ -21,7 +21,7 @@ def parse_args():
     group = parser.add_argument_group('Checkpoints and dataset path')
 
     group.add_argument('--checkpoint-dir', default='checkpoints/train', type=str, help='Directory of the well-trained model')
-    group.add_argument('--checkpoint_file', default='checkpoint_best.pt', type=str, help='Name of the checkpoint file')
+    group.add_argument('--checkpoint-file', default='checkpoint_best.pt', type=str, help='Name of the checkpoint file')
     group.add_argument('--evaluation-file', type=str, help='File to save the evaluation inputs')
 
     args = options.parse_args_and_arch(parser)

@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
 CHECKPOINT_PATH=checkpoints/train                                                   # Directory to save checkpoints
-NUM_CLASSES=3069                                                                    # Vocabulary size of internal function name words, plus one for <unk> token (OOV words)
-NUM_EXTERNAL=948                                                                    # Vocabulary size of external function names
+NUM_CLASSES=445                                                                     # Vocabulary size of internal function name words, plus one for <unk> token (OOV words)
+NUM_EXTERNAL=148                                                                    # Vocabulary size of external function names
 NUM_CALLs=1                                                                         # Number of callers/internal callees/external calees per batch (batch size)
 MAX_SENTENCEs=8                                                                     # Number of sequences per batch (batch size)
 EXTERNAL_EMB="embedding"                                                            # External callee embedding methods, options: (one_hot, embedding)
-DATASET_PATH="data_bin"                                                             # Path to the binarized dataset
-RESULT_FILE="training_evaluation/prediction_evaluation/prediction_result.txt"       # File to save the prediction results
-EVALUATION_FILE="training_evaluation/prediction_evaluation/evaluation_input.txt"    # File to save the evaluation input
+DATASET_PATH="pe_dataset_bin"                                                       # Path to the binarized dataset
+RESULT_FILE="training_evaluation/prediction_evaluation/pe_prediction_result.txt"    # File to save the prediction results
+EVALUATION_FILE="training_evaluation/prediction_evaluation/pe_evaluation_input.txt" # File to save the evaluation input
 
 CUDA_VISIBLE_DEVICES=1,2 python training_evaluation/function_name_prediction.py \
   $DATASET_PATH \
