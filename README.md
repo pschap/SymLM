@@ -130,7 +130,7 @@ NUM_CLASSES=445
 NUM_EXTERNAL=148
 ```
 
-The model trained using the dataset of Portable Executable files under [`pe_dataset_bin`](pe_dataset_bin) can be found under [`checkpoints/train/checkpoint_best.pt`](checkpoints/train/checkpoint_best.pt). 
+The model trained using the dataset of Portable Executable files under [`pe_dataset_bin`](pe_dataset_bin) can be found [here](https://drive.google.com/file/d/1G1jOrGabnEypKk9Ki225SbIYl2VVt4pF/view?usp=sharing). 
 
 ## Prediction and Evaluation
 
