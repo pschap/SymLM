@@ -25,11 +25,11 @@ def parse_args():
                         help='Path to evaluation word cluster')
     
     # Probability Threshold
-    parser.add_argument('--prob-threshold', type=int, default=0.3, 
+    parser.add_argument('--prob-threshold', type=float, default=0.3, 
                         help='Probability threshold for selecting the predicted words')
     
     # Similarity threshold for accuracy score
-    parser.add_argument('--similarity-threshold', type=int, default=0.9, 
+    parser.add_argument('--similarity-threshold', type=float, default=0.9, 
                         help='Similarity threshold for determining semantic similarity between target and predicted function names')
     
     args = parser.parse_args()

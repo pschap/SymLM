@@ -58,9 +58,15 @@ cd SymLM
 pip install --editable .
 ```
 
-Finally, install remaining packages:
+Install remaining packages:
 
 `pip install -r requirements.txt`
+
+Lastly, run the setup.py file to install fairseq and other various extensions needed for model training.
+
+```bash
+python setup.py install
+```
 
 ### Optional Packages
 
@@ -120,9 +126,11 @@ Values of the above parameters have been set for the sample binarized dataset un
 
 ```bash
 $ python training_evaluation/get_vocabulary_size.py --internal_vocabulary_path dataset_generation/vocabulary/label/dict.txt --external_vocabulary_path dataset_generation/vocabulary/external_label/dict.txt
-NUM_CLASSES=3069
-NUM_EXTERNAL=948
+NUM_CLASSES=445
+NUM_EXTERNAL=148
 ```
+
+The model trained using the dataset of Portable Executable files under [`pe_dataset_bin`](pe_dataset_bin) can be found under [`checkpoints/train/checkpoint_best.pt`](checkpoints/train/checkpoint_best.pt). 
 
 ## Prediction and Evaluation
 
@@ -161,8 +169,18 @@ The `training_evaluation/evaluation.py` script contains two optional command lin
 The script can be called with these arguments as follows:
 
 ```bash
-$ python training_evaluation/evaluation.py --evaluation-input training_evaluation/prediction_evaluation/evaluation_input.txt --word-cluster training_evaluation/prediction_evaluation/word_cluster.json --prob-threshold 0.3 --similarity-threshold 0.0
+$ python training_evaluation/evaluation.py --evaluation-input training_evaluation/prediction_evaluation/evaluation_input.txt --word-cluster training_evaluation/prediction_evaluation/word_cluster.json --prob-threshold 0.3 --similarity-threshold 0.9
 ```
+
+The collected evaluation input files for the evaluation of the dataset of Portable Executable files under [`pe_dataset_bin`](pe_dataset_bin) can be found in the following files/directories:
+
+- [`training_evaluation/prediction_evaluation/pe_prediction_test_evaluation.txt`](training_evaluation/prediction_evaluation/pe_prediction_test_evaluation.txt) (Test Dataset Evaluation)
+- [`training_evaluation/prediction_evaluation/pe_prediction_train_evaluation.txt`](training_evaluation/prediction_evaluation/pe_prediction_train_evaluation.txt) (Train Dataset Evaluation)
+- [`training_evaluation/prediction_evaluation/pe_prediction_valid_evaluation.txt`](training_evaluation/prediction_evaluation/pe_prediction_valid_evaluation.txt) (Validation Dataset Evaluation)
+
+Additionally as mentioned above, an accuracy score has been added to the evaluation results, marking a prediction as "accurate" if the semantic similarity between the predicted and target function names meet a defined threshold (see above). To measure the semantic simlarity, BERT encoding is used in order to generate a vector encoding of the both the target and predicted function names. Then, cosine similarity is used to measure the similarity between these two embeddings. For the evaluation of this accuracy metric, various similarity thresholds were tested. The results of the analysis are shown in the figure below.
+
+<p align="center"><img src="figure/accuracy-fig.png" alt="accuracy" width="500"></p>
 
 ## CodeWordNet
 
